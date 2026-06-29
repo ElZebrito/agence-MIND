@@ -533,39 +533,36 @@ nav.scrolled {
   to   { transform: translateX(-50%); }
 }
 
-/* ---- PROJECTS LIST (inline) ---- */
+/* ---- PROJECTS LIST (Clara Rhdy style — flowing paragraph) ---- */
 .projects-list-section {
   padding: var(--space-md) 0;
   border-top: 1px solid var(--border);
 }
 
 .projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-  column-gap: 0;
-  align-items: baseline;
-  line-height: 1.9;
-}
-
-.projects-list a {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 2.2;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.projects-list a {
+  font: inherit;
   color: var(--muted);
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .projects-list a:hover { color: var(--ink); }
-.projects-list a.current { color: var(--ink); font-weight: 400; }
 
-.projects-list .sep {
-  color: var(--border-hover);
-  font-size: 0.85rem;
-  padding: 0 0.7rem;
-  user-select: none;
+.projects-list a.current,
+.projects-list span.current {
+  color: var(--ink);
+  font-weight: 400;
+  pointer-events: none;
 }
 
 /* ---- FOOTER ---- */
