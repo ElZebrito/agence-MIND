@@ -1337,10 +1337,25 @@ footer {
 /* ---- REALISATIONS ---- */
 .realisations-filter {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0;
   padding: var(--space-sm) 0;
   margin-bottom: var(--space-md);
-  align-items: flex-start;
+}
+
+.filter-row {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-row--sub {
+  border-bottom: none;
+  padding-top: 0.6rem;
+  padding-bottom: 0;
+  gap: 1.5rem;
+  margin-left: 5.5rem;
 }
 
 .filter-btn {
@@ -1373,21 +1388,8 @@ footer {
 
 .filter-btn.active::after { width: 100%; }
 
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.filter-children {
-  display: flex;
-  gap: 1.2rem;
-  padding-left: 1.2rem;
-  border-left: 1px solid var(--border-hover);
-}
-
 .filter-sub {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
 }
 
 [data-cat] { transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out); }

@@ -37,16 +37,16 @@
 
   <div class="container">
     <div class="realisations-filter reveal">
-      <button class="filter-btn active" onclick="filter('all', this)">Tout</button>
-      <div class="filter-group">
+      <div class="filter-row">
+        <button class="filter-btn active" onclick="filter('all', this)">Tout</button>
         <button class="filter-btn" onclick="filter('residentiel', this)">Résidentiel</button>
-        <div class="filter-children" id="sub-residentiel">
-          <button class="filter-btn filter-sub" onclick="filter('residence-principale', this)">Résidences principales</button>
-          <button class="filter-btn filter-sub" onclick="filter('vacances', this)">Maisons de vacances</button>
-          <button class="filter-btn filter-sub" onclick="filter('locatif', this)">Investissements locatifs</button>
-        </div>
+        <button class="filter-btn" onclick="filter('bureaux', this)">Bureaux & Hospitality</button>
       </div>
-      <button class="filter-btn" onclick="filter('bureaux', this)">Bureaux & Hospitality</button>
+      <div class="filter-row filter-row--sub">
+        <button class="filter-btn filter-sub" onclick="filter('residence-principale', this)">Résidences principales</button>
+        <button class="filter-btn filter-sub" onclick="filter('vacances', this)">Maisons de vacances</button>
+        <button class="filter-btn filter-sub" onclick="filter('locatif', this)">Investissements locatifs</button>
+      </div>
     </div>
 
     <div class="grid-projects" id="projects-grid">
