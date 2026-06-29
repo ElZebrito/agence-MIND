@@ -1352,7 +1352,8 @@ footer {
 
 .filter-children {
   display: flex;
-  gap: 1.2rem;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .filter-btn {
