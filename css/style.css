@@ -131,8 +131,7 @@ nav.scrolled {
 .nav-links a {
   font-size: 0.85rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--muted);
   position: relative;
   transition: color 0.3s;
@@ -144,11 +143,11 @@ nav.scrolled {
 
 .nav-links a.active {
   color: var(--ink);
-  font-size: 1.7rem;
   font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0;
-  text-transform: none;
 }
 
 /* ---- MOBILE MENU ---- */
