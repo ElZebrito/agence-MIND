@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réalisations — Agence MIND</title>
+  <meta name="description" content="Portfolio de l'Agence MIND : projets résidentiels, bureaux, hospitality et investissements locatifs à Paris et à l'international.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .project-card { display: block; }
+    [data-cat] { transition: opacity 0.3s; }
+    [data-cat].hidden { opacity: 0; pointer-events: none; display: none; }
+
+    .coming-soon-card { opacity: 0.4; cursor: default; }
+    .coming-soon-card .img-wrap { position: relative; }
+    .coming-soon-card .img-wrap::after {
+      content: 'Bientôt';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: rgba(242,240,237,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      MIND
+      <span>Architecture · Design · Décoration</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="realisations.html" class="active">Réalisations</a></li>
+      <li><a href="presse.html">Presse</a></li>
+      <li><a href="agence.html">L'Agence</a></li>
+      <li><a href="services.html">Prestations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Portfolio</p>
+      <h1>Réalisations</h1>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <div class="container">
+    <div class="realisations-filter">
+      <button class="filter-btn active" onclick="filter('all', this)">Tout</button>
+      <button class="filter-btn" onclick="filter('residentiel', this)">Résidentiel</button>
+      <button class="filter-btn" onclick="filter('bureaux', this)">Bureaux & Hospitality</button>
+      <button class="filter-btn" onclick="filter('locatif', this)">Locatif</button>
+      <button class="filter-btn" onclick="filter('international', this)">International</button>
+    </div>
+
+    <!-- GRILLE -->
+    <div class="grid-projects" id="projects-grid">
+
+      <a href="pages/projet-hauteville.html" class="project-card card-wide" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);aspect-ratio:16/10;"></div>
+        <div class="project-card-info"><h3>Hauteville</h3><span>Résidentiel · Paris 10e</span></div>
+      </a>
+
+      <a href="pages/projet-saint-mande.html" class="project-card card-med" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Saint-Mandé</h3><span>Résidentiel · Maison</span></div>
+      </a>
+
+      <a href="pages/projet-yazigi.html" class="project-card card-med" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#BBB5B0,#9C9893);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Yazigi</h3><span>Résidentiel · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-minorque.html" class="project-card card-wide" data-cat="residentiel international">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0);aspect-ratio:16/10;"></div>
+        <div class="project-card-info"><h3>Minorque</h3><span>Résidentiel secondaire · Espagne</span></div>
+      </a>
+
+      <a href="pages/projet-archi-social-club.html" class="project-card card-third" data-cat="bureaux">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Archi Social Club</h3><span>Bureaux · Paris 7e</span></div>
+      </a>
+
+      <a href="pages/projet-explain.html" class="project-card card-third" data-cat="bureaux">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#B8B3AE,#9D9994);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Explain</h3><span>Bureaux · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-accelency.html" class="project-card card-third" data-cat="bureaux">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Accelency</h3><span>Bureaux · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-londres-highbury.html" class="project-card card-half" data-cat="residentiel international">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Londres Highbury</h3><span>Résidentiel · Royaume-Uni</span></div>
+      </a>
+
+      <a href="pages/projet-porto.html" class="project-card card-half" data-cat="residentiel international">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#BBB5B0,#9C9893);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Porto Antunes</h3><span>Maison de vacances · Portugal</span></div>
+      </a>
+
+      <a href="pages/projet-batignolles.html" class="project-card card-third" data-cat="residentiel locatif">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Batignolles</h3><span>Résidentiel · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-petites-ecuries.html" class="project-card card-third" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Petites Écuries</h3><span>Résidentiel · Petite rénovation</span></div>
+      </a>
+
+      <a href="pages/projet-hay-les-roses.html" class="project-card card-third" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#B8B3AE,#9D9994);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>L'Haÿ-les-Roses</h3><span>Résidentiel</span></div>
+      </a>
+
+      <a href="pages/projet-quincampoix.html" class="project-card card-half" data-cat="locatif">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Quincampoix</h3><span>Locatif · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-quai-tourelle.html" class="project-card card-half" data-cat="locatif">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Quai de la Tourelle</h3><span>Locatif · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-poliveau.html" class="project-card card-third" data-cat="locatif">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#BBB5B0,#9C9893);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Poliveau</h3><span>Locatif · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-croix-nivert.html" class="project-card card-third" data-cat="locatif">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Croix Nivert</h3><span>Locatif · Paris</span></div>
+      </a>
+
+      <a href="pages/projet-gournay.html" class="project-card card-third" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Delpoio Gournay</h3><span>Résidentiel · Grande rénovation</span></div>
+      </a>
+
+      <a href="pages/projet-hec-alumni.html" class="project-card card-half" data-cat="bureaux">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#B8B3AE,#9D9994);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>HEC Alumni</h3><span>Bureaux d'accueil</span></div>
+      </a>
+
+      <a href="pages/projet-londres-islington.html" class="project-card card-half" data-cat="residentiel international">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Londres Islington</h3><span>Résidentiel · Royaume-Uni</span></div>
+      </a>
+
+      <!-- COMING SOON -->
+      <div class="project-card card-third coming-soon-card" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#E0DDD9,#CECCCA);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Maison-Alfort · Chauvin</h3><span>Résidentiel · Villa</span></div>
+      </div>
+
+      <div class="project-card card-third coming-soon-card" data-cat="residentiel">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#E0DDD9,#CECCCA);aspect-ratio:4/3;"></div>
+        <div class="project-card-info"><h3>Garches</h3><span>Résidentiel · Villa</span></div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="projects-list-section">
+    <div class="container">
+      <div class="projects-list">
+        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span>
+        <a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span>
+        <a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span>
+        <a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span>
+        <a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span>
+        <a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span>
+        <a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span>
+        <a href="pages/projet-explain.html">Explain</a><span class="sep">·</span>
+        <a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span>
+        <a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span>
+        <a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span>
+        <a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span>
+        <a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span>
+        <a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span>
+        <a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span>
+        <a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span>
+        <a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span>
+        <a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span>
+        <a href="pages/projet-hec-alumni.html">HEC Alumni</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>MIND</h2>
+          <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
+          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
+            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
+            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="presse.html">Presse</a></li>
+            <li><a href="agence.html">L'Agence</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Adresses</h4>
+          <ul>
+            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
+            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">Prendre contact</a></li>
+            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Agence MIND. Tous droits réservés.</span>
+        <span>Mentions légales</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    function filter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('[data-cat]').forEach(card => {
+        if (cat === 'all' || card.dataset.cat.includes(cat)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestations — Agence MIND</title>
+  <meta name="description" content="Découvrez les prestations d'Agence MIND : audit architectural, mission complète de rénovation, et design de mobilier sur-mesure. Paris, Europe et international.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      MIND
+      <span>Architecture · Design · Décoration</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="realisations.html">Réalisations</a></li>
+      <li><a href="presse.html">Presse</a></li>
+      <li><a href="agence.html">L'Agence</a></li>
+      <li><a href="services.html" class="active">Prestations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Nos prestations</p>
+      <div class="text-left">
+        <h1>Un accompagnement<br><em>sur mesure</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCROCHE -->
+  <section style="padding-bottom: var(--gap);">
+    <div class="container">
+      <div class="services-intro">
+        <div>
+          <p style="font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.8; color: var(--mid); max-width: 480px;">
+            Nous prenons soin de vos projets quelle que soit leur envergure et leur nature — particulier, professionnel, investisseur. Chaque espace est une opportunité de créer quelque chose d'unique, de fonctionnel et de durable.
+          </p>
+        </div>
+        <div>
+          <p style="font-size: 0.85rem; color: var(--mid); line-height: 1.9;">
+            Un architecte d'intérieur ne vous coûte pas plus cher — il vous fait gagner de l'argent. En coordonnant entreprises, matériaux et planning, nous protégeons votre investissement à chaque étape.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS — style Ossart -->
+  <section>
+    <div class="container">
+      <div class="prestation-list">
+
+        <!-- 01 Audit architectural -->
+        <div class="prestation-item" onclick="togglePrestation(this)">
+          <div class="prestation-num">01</div>
+          <div>
+            <h3>Audit architectural</h3>
+            <p>Une analyse experte et indépendante de votre bien avant tout engagement, pour décider en toute clarté.</p>
+            <div class="prestation-detail">
+              <ul>
+                <li>Visite du bien et relevé de l'existant</li>
+                <li>Analyse de la faisabilité architecturale et technique</li>
+                <li>Estimation budgétaire des travaux (fourchette réaliste)</li>
+                <li>Identification des contraintes réglementaires (copropriété, permis)</li>
+                <li>Recommandations sur l'approche de rénovation</li>
+                <li>Rapport écrit remis sous 5 jours ouvrés</li>
+              </ul>
+              <p style="margin-top:1.5rem; font-size:0.78rem; color:var(--mid); font-style:italic;">
+                Idéal avant un achat immobilier, une mise en location ou pour valider la faisabilité d'un projet.
+              </p>
+            </div>
+          </div>
+          <div class="prestation-arrow">+</div>
+        </div>
+
+        <!-- 02 Mission complète -->
+        <div class="prestation-item" onclick="togglePrestation(this)">
+          <div class="prestation-num">02</div>
+          <div>
+            <h3>Mission complète</h3>
+            <p>De la conception à la remise des clés — nous pilotons l'intégralité de votre projet avec précision et élégance.</p>
+            <div class="prestation-detail">
+              <p style="font-size:0.82rem; color:var(--mid); margin-bottom:1.2rem;">Notre mission s'articule en quatre phases complémentaires :</p>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--light); margin-bottom:1.5rem;">
+                <div style="background:var(--bg); padding:1.5rem;">
+                  <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:0.5rem;">Phase 1</p>
+                  <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Cadrage</h4>
+                  <p style="font-size:0.75rem; color:var(--mid);">Définition des objectifs, du budget et des contraintes. Établissement du planning général du projet.</p>
+                </div>
+                <div style="background:var(--bg); padding:1.5rem;">
+                  <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:0.5rem;">Phase 2</p>
+                  <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Conception</h4>
+                  <p style="font-size:0.75rem; color:var(--mid);">Agencement des espaces, plans techniques, perspectives 3D et rendus pour visualiser le projet avant travaux.</p>
+                </div>
+                <div style="background:var(--bg); padding:1.5rem;">
+                  <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:0.5rem;">Phase 3</p>
+                  <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Sélection</h4>
+                  <p style="font-size:0.75rem; color:var(--mid);">Direction artistique, prescription mobilier et matériaux, mise en concurrence des entreprises et fournisseurs.</p>
+                </div>
+                <div style="background:var(--bg); padding:1.5rem;">
+                  <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:0.5rem;">Phase 4</p>
+                  <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Maîtrise d'œuvre</h4>
+                  <p style="font-size:0.75rem; color:var(--mid);">Pilotage du chantier, contrôle de la réalisation, suivi planning & budget, assistance à maîtrise d'ouvrage.</p>
+                </div>
+              </div>
+
+              <p style="font-size:0.78rem; color:var(--mid); font-style:italic;">
+                Rénovation complète toutes surfaces — du studio parisien à la maison de maître. Intervention à Paris, en Europe et à l'international avec maîtrise d'œuvre déléguée.
+              </p>
+            </div>
+          </div>
+          <div class="prestation-arrow">+</div>
+        </div>
+
+        <!-- 03 Design mobilier -->
+        <div class="prestation-item" onclick="togglePrestation(this)">
+          <div class="prestation-num">03</div>
+          <div>
+            <h3>Design de mobilier</h3>
+            <p>Création et prescription de pièces sur-mesure pour des intérieurs qui n'appartiennent qu'à vous.</p>
+            <div class="prestation-detail">
+              <p style="font-size:0.82rem; color:var(--mid); margin-bottom:1.5rem;">Nous concevons et coordonnons la fabrication de mobilier unique, pensé spécifiquement pour votre espace.</p>
+              <ul>
+                <li>Conception de pièces uniques (tables, bibliothèques, rangements, luminaires)</li>
+                <li>Sélection et prescription de mobilier contemporain</li>
+                <li>Coordination avec ébénistes, menuisiers et artisans</li>
+                <li>Sourcing matériaux nobles (marbre, bois massif, métal, tissus)</li>
+                <li>Suivi de fabrication et livraison</li>
+              </ul>
+
+              <!-- Exemples de meubles -->
+              <p style="margin-top:2rem; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:1rem;">Exemples de réalisations</p>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;">
+                <div>
+                  <div style="aspect-ratio:1; background:linear-gradient(135deg,#D4CEC7,#B8B2AA); margin-bottom:0.5rem;"></div>
+                  <p style="font-size:0.72rem; color:var(--mid);">Table de salle à manger<br>Chêne massif & acier</p>
+                </div>
+                <div>
+                  <div style="aspect-ratio:1; background:linear-gradient(135deg,#C9C3BC,#A8A49F); margin-bottom:0.5rem;"></div>
+                  <p style="font-size:0.72rem; color:var(--mid);">Bibliothèque sur mesure<br>Laqué mat & noyer</p>
+                </div>
+                <div>
+                  <div style="aspect-ratio:1; background:linear-gradient(135deg,#BBB5B0,#9C9893); margin-bottom:0.5rem;"></div>
+                  <p style="font-size:0.72rem; color:var(--mid);">Banquette d'entrée<br>Velours & laiton brossé</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prestation-arrow">+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOLOGIES CLIENTS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label" style="margin-bottom:2rem;">Qui nous accompagnons</p>
+      <div class="clients-grid">
+        <div class="client-card">
+          <h3>Particuliers</h3>
+          <p>Résidence principale, résidence secondaire ou maison de vacances — nous créons des intérieurs qui vous ressemblent, que ce soit un studio ou une maison de maître.</p>
+        </div>
+        <div class="client-card">
+          <h3>Professionnels</h3>
+          <p>Bureaux, espaces de travail, showrooms et hospitality — nous concevons des environnements qui reflètent votre image et optimisent vos usages.</p>
+        </div>
+        <div class="client-card">
+          <h3>Investisseurs</h3>
+          <p>Locatif et home staging — nous valorisons votre bien immobilier avec une approche centrée sur le retour sur investissement et l'attractivité locative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES D'INTERVENTION -->
+  <section class="section" style="border-top:1px solid var(--light);">
+    <div class="container">
+      <div class="zones">
+        <div class="text-left">
+          <p class="section-label">Zones d'intervention</p>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.8rem); font-style:italic; margin-bottom:1.5rem;">Paris, l'Europe<br>et au-delà</h2>
+          <p style="font-size:0.88rem; color:var(--mid); line-height:1.9;">
+            Nos projets nous ont menés de Paris à Londres, de Porto à Minorque. Nous intervenons partout en Europe et à l'international grâce à notre réseau de maîtrise d'œuvre déléguée.
+          </p>
+        </div>
+        <div>
+          <ul class="zone-list">
+            <li>Paris & Île-de-France</li>
+            <li>France entière</li>
+            <li>Royaume-Uni (Londres)</li>
+            <li>Portugal (Porto, Lisbonne)</li>
+            <li>Espagne & Baléares (Minorque)</li>
+            <li>International — maîtrise d'œuvre déléguée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉROULÉ D'UN PROJET -->
+  <section class="project-process" style="border-top:1px solid var(--light);">
+    <div class="container">
+      <p class="section-label">Comment ça se passe</p>
+      <div class="text-right" style="margin-bottom:0;">
+        <h2 style="font-size:clamp(1.8rem,3vw,2.8rem); font-style:italic;">Le déroulé complet<br>d'un projet</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">01 — Prise de côte</div>
+          <h4>Relevé & analyse</h4>
+          <p>Visite du lieu, relevé des mesures précises, analyse des contraintes structurelles, lumière, circulation. Recueil de vos attentes et de votre mode de vie.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02 — Plans & conception</div>
+          <h4>Plans techniques & 3D</h4>
+          <p>Proposition d'agencement, plans d'exécution et perspectives 3D photo-réalistes. Vous visualisez votre futur espace avant le début des travaux.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03 — Avant / Après</div>
+          <h4>Direction artistique</h4>
+          <p>Sélection des matériaux, couleurs, mobilier et luminaires. Nous constituons un book complet avec visuels de référence et prescriptions détaillées.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04 — Suivi chantier</div>
+          <h4>Pilotage & livraison</h4>
+          <p>Coordination des entreprises, visites de chantier régulières, respect du budget et du planning. Livraison clé en main, sans mauvaises surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS PARTENAIRES -->
+  <div class="logo-ticker" style="margin-top: var(--gap);">
+    <div class="logo-ticker-track">
+      <span>Roche Bobois</span>
+      <span>·</span>
+      <span>Molteni&C</span>
+      <span>·</span>
+      <span>Flos</span>
+      <span>·</span>
+      <span>Vitra</span>
+      <span>·</span>
+      <span>Knoll</span>
+      <span>·</span>
+      <span>Bolon</span>
+      <span>·</span>
+      <span>Casamance</span>
+      <span>·</span>
+      <span>Pierre Frey</span>
+      <span>·</span>
+      <span>Élitis</span>
+      <span>·</span>
+      <span>Hartô</span>
+      <span>·</span>
+      <!-- duplicate -->
+      <span>Roche Bobois</span>
+      <span>·</span>
+      <span>Molteni&C</span>
+      <span>·</span>
+      <span>Flos</span>
+      <span>·</span>
+      <span>Vitra</span>
+      <span>·</span>
+      <span>Knoll</span>
+      <span>·</span>
+      <span>Bolon</span>
+      <span>·</span>
+      <span>Casamance</span>
+      <span>·</span>
+      <span>Pierre Frey</span>
+      <span>·</span>
+      <span>Élitis</span>
+      <span>·</span>
+      <span>Hartô</span>
+      <span>·</span>
+    </div>
+  </div>
+
+    <div class="projects-list-section">
+    <div class="container">
+      <div class="projects-list">
+        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span>
+        <a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span>
+        <a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span>
+        <a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span>
+        <a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span>
+        <a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span>
+        <a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span>
+        <a href="pages/projet-explain.html">Explain</a><span class="sep">·</span>
+        <a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span>
+        <a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span>
+        <a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span>
+        <a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span>
+        <a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span>
+        <a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span>
+        <a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span>
+        <a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span>
+        <a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span>
+        <a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span>
+        <a href="pages/projet-hec-alumni.html">HEC Alumni</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>MIND</h2>
+          <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
+          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
+            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
+            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="presse.html">Presse</a></li>
+            <li><a href="agence.html">L'Agence</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Adresses</h4>
+          <ul>
+            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
+            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">Prendre contact</a></li>
+            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Agence MIND. Tous droits réservés.</span>
+        <span>Mentions légales</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    function togglePrestation(el) {
+      const detail = el.querySelector('.prestation-detail');
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.prestation-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.prestation-detail').classList.remove('open');
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        detail.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+</html>
