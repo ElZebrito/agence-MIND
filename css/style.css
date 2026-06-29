@@ -1337,25 +1337,22 @@ footer {
 /* ---- REALISATIONS ---- */
 .realisations-filter {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  gap: 2.5rem;
+  align-items: flex-start;
   padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
   margin-bottom: var(--space-md);
 }
 
-.filter-row {
+.filter-group {
   display: flex;
-  gap: 2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.filter-row--sub {
-  border-bottom: none;
-  padding-top: 0.6rem;
-  padding-bottom: 0;
-  gap: 1.5rem;
-  margin-left: 5.5rem;
+.filter-children {
+  display: flex;
+  gap: 1.2rem;
 }
 
 .filter-btn {
@@ -1390,6 +1387,7 @@ footer {
 
 .filter-sub {
   font-size: 0.72rem;
+  letter-spacing: 0.08em;
 }
 
 [data-cat] { transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out); }
