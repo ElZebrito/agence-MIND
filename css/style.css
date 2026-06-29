@@ -25,9 +25,9 @@
   --fs-hero: clamp(3.2rem, 7vw, 5.8rem);
   --fs-h2: clamp(2rem, 4vw, 3.4rem);
   --fs-h3: clamp(1.4rem, 2.2vw, 2rem);
-  --fs-body: clamp(0.9rem, 1vw, 1rem);
-  --fs-small: 0.8rem;
-  --fs-xs: 0.7rem;
+  --fs-body: clamp(1rem, 1.1vw, 1.125rem);
+  --fs-small: 0.95rem;
+  --fs-xs: 0.8rem;
 
   --space-xs: clamp(0.5rem, 1vw, 0.75rem);
   --space-sm: clamp(1rem, 2vw, 1.5rem);
@@ -129,7 +129,7 @@ nav.scrolled {
 }
 
 .nav-links a {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -434,7 +434,7 @@ nav.scrolled {
 .project-card-info h3 {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   transition: color 0.3s;
 }
@@ -543,7 +543,7 @@ nav.scrolled {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
   line-height: 2.2;
   letter-spacing: 0.01em;
   color: var(--muted);
@@ -1140,7 +1140,7 @@ footer {
 }
 
 .press-article-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 0.4rem;
   line-height: 1.4;
