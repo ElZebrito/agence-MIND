@@ -135,28 +135,17 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--muted);
   position: relative;
-  transition: color 0.4s var(--ease-out);
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--ink);
-  transition: width 0.4s var(--ease-out);
+  transition: color 0.4s var(--ease-out), font-size 0.4s var(--ease-out), font-family 0.4s, letter-spacing 0.4s var(--ease-out);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--ink);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
+  font-size: 1.7rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* ---- MOBILE MENU ---- */
