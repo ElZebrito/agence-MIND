@@ -208,13 +208,6 @@
     function filter(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      var sub = document.getElementById('sub-residentiel');
-      if (cat === 'residentiel' || cat === 'residence-principale' || cat === 'vacances' || cat === 'locatif') {
-        sub.classList.add('open');
-      } else {
-        sub.classList.remove('open');
-        sub.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      }
       document.querySelectorAll('[data-cat]').forEach(card => {
         if (cat === 'all' || card.dataset.cat.includes(cat)) {
           card.classList.remove('hidden');
