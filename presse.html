@@ -10,10 +10,7 @@
 <body>
 
   <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      MIND
-      <span>Architecture · Design · Décoration</span>
-    </a>
+    <a href="index.html" class="nav-logo">MIND<span>Architecture · Design · Décoration</span></a>
     <ul class="nav-links">
       <li><a href="realisations.html">Réalisations</a></li>
       <li><a href="presse.html" class="active">Presse</a></li>
@@ -21,78 +18,80 @@
       <li><a href="services.html">Prestations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- HEADER -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="realisations.html">Réalisations</a>
+    <a href="presse.html">Presse</a>
+    <a href="agence.html">L'Agence</a>
+    <a href="services.html">Prestations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
   <section class="press-hero-text">
     <div class="container">
-      <p class="section-label">Revue de presse</p>
-      <div class="text-left">
-        <h1 style="font-size:var(--fs-xl); font-style:italic;">Vu dans<br>la presse</h1>
-      </div>
-      <p style="margin-top:2rem; font-size:0.9rem; color:var(--mid); max-width:480px; line-height:1.9;">
+      <h1 class="reveal" style="font-size:var(--fs-hero); font-style:italic; font-weight:300; max-width:600px;">Vu dans<br>la presse</h1>
+      <p class="reveal" style="transition-delay:0.1s; margin-top:var(--space-sm); font-size:var(--fs-body); color:var(--mid); max-width:480px; line-height:1.9;">
         L'Agence MIND est régulièrement citée et mise à l'honneur dans les plus grandes publications d'architecture intérieure, en France et à l'international.
       </p>
     </div>
   </section>
 
-  <!-- LOGOS PUBLICATIONS -->
   <section>
     <div class="container">
       <div class="press-logos">
-        <div class="press-logo-item">Marie Claire<br>Maison</div>
-        <div class="press-logo-item">Côté<br>Ouest</div>
-        <div class="press-logo-item">Living Etc<br><span style="font-size:0.7rem;">United Kingdom</span></div>
-        <div class="press-logo-item">A Vivre<br>Architectures</div>
-        <div class="press-logo-item">Homify<br><span style="font-size:0.7rem;">International</span></div>
+        <div class="press-logo-item reveal">Marie Claire<br>Maison</div>
+        <div class="press-logo-item reveal" style="transition-delay:0.05s;">Côté<br>Ouest</div>
+        <div class="press-logo-item reveal" style="transition-delay:0.1s;">Living Etc<br><span style="font-size:var(--fs-xs);">United Kingdom</span></div>
+        <div class="press-logo-item reveal" style="transition-delay:0.15s;">A Vivre<br>Architectures</div>
+        <div class="press-logo-item reveal" style="transition-delay:0.2s;">Homify<br><span style="font-size:var(--fs-xs);">International</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ARTICLES -->
-  <section style="padding: var(--gap) 0;">
+  <section style="padding:var(--space-lg) 0;">
     <div class="container">
-      <p class="section-label" style="margin-bottom:2rem;">Sélection d'articles</p>
+      <p class="section-label reveal-line" style="margin-bottom:var(--space-sm);">Sélection d'articles</p>
       <div class="press-articles">
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#D4CEC7,#B8B2AA); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);"></div>
           <div class="pub">Marie Claire Maison</div>
           <h3>Un appartement parisien réinventé avec élégance</h3>
           <div class="date">2019</div>
         </div>
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#C9C3BC,#A8A49F); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal" style="transition-delay:0.08s;">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);"></div>
           <div class="pub">Marie Claire Maison</div>
           <h3>La rénovation d'un hôtel particulier en lumière</h3>
           <div class="date">2017</div>
         </div>
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#BBB5B0,#9C9893); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal" style="transition-delay:0.16s;">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#BBB5B0,#9C9893);"></div>
           <div class="pub">Living Etc — United Kingdom</div>
           <h3>French interiors at their most refined</h3>
           <div class="date">2020</div>
         </div>
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#D6D1CC,#BBB5B0); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0);"></div>
           <div class="pub">Côté Ouest</div>
           <h3>Douceur et sophistication dans un appartement bordelais</h3>
           <div class="date">2018</div>
         </div>
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#CCC7C1,#AFA9A4); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal" style="transition-delay:0.08s;">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4);"></div>
           <div class="pub">A Vivre Architectures</div>
           <h3>Journées à Vivre — Lauréate 2019</h3>
           <div class="date">2019</div>
         </div>
 
-        <div class="press-article-card">
-          <div style="aspect-ratio:4/3; background:linear-gradient(160deg,#B8B3AE,#9D9994); margin-bottom:1.5rem;"></div>
+        <div class="press-article-card reveal" style="transition-delay:0.16s;">
+          <div class="img-placeholder" style="background:linear-gradient(160deg,#B8B3AE,#9D9994);"></div>
           <div class="pub">Homify International</div>
           <h3>Agence MIND à l'honneur — Égypte, Canada, Portugal</h3>
           <div class="date">2021</div>
@@ -102,100 +101,54 @@
     </div>
   </section>
 
-  <!-- CONTACT PRESSE -->
-  <section style="border-top:1px solid var(--light); padding:var(--gap) 0;">
+  <section style="border-top:1px solid var(--border); padding:var(--space-lg) 0;">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
-        <div class="text-left">
-          <p class="section-label">Contact presse</p>
-          <h2 style="font-size:clamp(1.8rem,3vw,2.8rem); font-style:italic; margin-bottom:1.5rem;">Vous êtes<br>journaliste ?</h2>
-          <p style="font-size:0.88rem; color:var(--mid); line-height:1.9; margin-bottom:2rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,6rem); align-items:center;">
+        <div style="max-width:520px;">
+          <p class="section-label reveal-line">Contact presse</p>
+          <h2 class="reveal" style="font-size:var(--fs-h2); font-style:italic; font-weight:300; margin-bottom:var(--space-sm);">Vous êtes<br>journaliste ?</h2>
+          <p class="reveal" style="transition-delay:0.1s; font-size:var(--fs-body); color:var(--mid); line-height:1.9; margin-bottom:var(--space-sm);">
             Pour toute demande d'interview, de visite de projet ou de visuels haute définition, n'hésitez pas à nous contacter directement.
           </p>
-          <a href="mailto:contact@agence-mind.com" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--dark); padding-bottom:2px;">
-            contact@agence-mind.com
-          </a>
+          <a href="mailto:contact@agence-mind.com" class="link-underline reveal" style="transition-delay:0.15s;">contact@agence-mind.com</a>
         </div>
-        <div style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); aspect-ratio:4/3;">
-          <!-- Image éditoriale -->
-        </div>
+        <div class="reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); aspect-ratio:4/3;"></div>
       </div>
     </div>
   </section>
 
-    <div class="projects-list-section">
+  <div class="projects-list-section">
     <div class="container">
       <div class="projects-list">
-        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span>
-        <a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span>
-        <a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span>
-        <a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span>
-        <a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span>
-        <a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span>
-        <a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span>
-        <a href="pages/projet-explain.html">Explain</a><span class="sep">·</span>
-        <a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span>
-        <a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span>
-        <a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span>
-        <a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span>
-        <a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span>
-        <a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span>
-        <a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span>
-        <a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span>
-        <a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span>
-        <a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span>
-        <a href="pages/projet-hec-alumni.html">HEC Alumni</a>
+        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span><a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span><a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span><a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span><a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span><a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span><a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span><a href="pages/projet-explain.html">Explain</a><span class="sep">·</span><a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span><a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span><a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span><a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span><a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span><a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span><a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span><a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span><a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span><a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span><a href="pages/projet-hec-alumni.html">HEC Alumni</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <h2>MIND</h2>
-          <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
-          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
-            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
-            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="presse.html">Presse</a></li>
-            <li><a href="agence.html">L'Agence</a></li>
-            <li><a href="services.html">Prestations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Adresses</h4>
-          <ul>
-            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
-            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="contact.html">Prendre contact</a></li>
-            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
-          </ul>
-        </div>
+        <div class="footer-brand"><h2>MIND</h2><p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p><div class="footer-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a></div></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="realisations.html">Réalisations</a></li><li><a href="presse.html">Presse</a></li><li><a href="agence.html">L'Agence</a></li><li><a href="services.html">Prestations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Prendre contact</a></li><li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Agence MIND. Tous droits réservés.</span>
-        <span>Mentions légales</span>
-      </div>
+      <div class="footer-bottom"><span>© 2025 Agence MIND. Tous droits réservés.</span><span>Mentions légales</span></div>
     </div>
   </footer>
 
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
 </body>

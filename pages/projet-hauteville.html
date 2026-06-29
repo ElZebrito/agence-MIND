@@ -11,28 +11,28 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: var(--light);
-      margin: var(--gap) 0;
+      background: var(--border);
+      margin: var(--space-lg) 0;
     }
     .projet-nav-link {
       background: var(--bg);
-      padding: 2rem;
+      padding: var(--space-md);
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
-      transition: background 0.2s;
+      transition: background 0.4s var(--ease-out);
     }
-    .projet-nav-link:hover { background: var(--white); }
+    .projet-nav-link:hover { background: rgba(255,255,255,0.5); }
     .projet-nav-link .dir {
-      font-size: 0.7rem;
+      font-size: var(--fs-xs);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--mid);
+      color: var(--muted);
     }
     .projet-nav-link .proj-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
     .projet-nav-link.next { text-align: right; }
   </style>
@@ -40,10 +40,7 @@
 <body>
 
   <nav id="main-nav">
-    <a href="../index.html" class="nav-logo">
-      MIND
-      <span>Architecture · Design · Décoration</span>
-    </a>
+    <a href="../index.html" class="nav-logo">MIND<span>Architecture · Design · Décoration</span></a>
     <ul class="nav-links">
       <li><a href="../realisations.html" class="active">Réalisations</a></li>
       <li><a href="../presse.html">Presse</a></li>
@@ -51,202 +48,140 @@
       <li><a href="../services.html">Prestations</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- HEADER PROJET — titre + méta -->
-  <section class="projet-header">
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../realisations.html">Réalisations</a>
+    <a href="../presse.html">Presse</a>
+    <a href="../agence.html">L'Agence</a>
+    <a href="../services.html">Prestations</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <section>
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 360px; gap:4rem; align-items:end; padding-top:calc(80px + 3rem); padding-bottom:2rem;">
+      <div style="display:grid; grid-template-columns:1fr 360px; gap:4rem; align-items:end; padding-top:calc(var(--nav-height) + var(--space-md)); padding-bottom:var(--space-sm);">
         <div>
-          <p class="section-label"><a href="../realisations.html">Réalisations</a> · Résidentiel</p>
-          <h1>Hauteville</h1>
+          <p class="section-label reveal-line"><a href="../realisations.html" style="transition:color 0.3s;">Réalisations</a> · Résidentiel</p>
+          <h1 class="reveal" style="font-size:clamp(2.8rem,6vw,5.5rem); font-style:italic; font-weight:300;">Hauteville</h1>
         </div>
-        <div class="projet-meta">
-          <div class="projet-meta-item">
-            <span class="label">Localisation</span>
-            <span>Paris 10e</span>
-          </div>
-          <div class="projet-meta-item">
-            <span class="label">Typologie</span>
-            <span>Appartement — Résidentiel</span>
-          </div>
-          <div class="projet-meta-item">
-            <span class="label">Surface</span>
-            <span>120 m²</span>
-          </div>
-          <div class="projet-meta-item">
-            <span class="label">Prestation</span>
-            <span>Mission complète</span>
-          </div>
-          <div class="projet-meta-item">
-            <span class="label">Crédit photo</span>
-            <span>À renseigner</span>
-          </div>
+        <div class="projet-meta reveal" style="transition-delay:0.1s;">
+          <div class="projet-meta-item"><span class="label">Localisation</span><span>Paris 10e</span></div>
+          <div class="projet-meta-item"><span class="label">Typologie</span><span>Appartement — Résidentiel</span></div>
+          <div class="projet-meta-item"><span class="label">Surface</span><span>120 m²</span></div>
+          <div class="projet-meta-item"><span class="label">Prestation</span><span>Mission complète</span></div>
+          <div class="projet-meta-item"><span class="label">Crédit photo</span><span>À renseigner</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- IMAGE PRINCIPALE -->
   <div class="container">
-    <div class="projet-main-image" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);">
-      <!-- Photo principale à insérer -->
-    </div>
+    <div class="projet-main-image reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);"></div>
   </div>
 
-  <!-- CONTENU PROJET — texte à droite, style Amandine Albertini -->
   <section>
     <div class="container">
       <div class="projet-content">
         <div class="projet-text">
-          <h2>Le projet</h2>
-          <p>
+          <h2 class="reveal">Le projet</h2>
+          <p class="reveal" style="transition-delay:0.05s;">
             Cet appartement haussmannien du 10e arrondissement de Paris a fait l'objet d'une rénovation complète, visant à retrouver l'élégance d'origine tout en l'adaptant à un mode de vie contemporain. Les volumes ont été repensés pour libérer la circulation et maximiser la luminosité naturelle.
           </p>
-          <p>
+          <p class="reveal" style="transition-delay:0.1s;">
             Le choix des matières — marbre de Carrare, boiseries peintes en blanc cassé, parquet point de Hongrie — crée une palette intemporelle qui dialogue avec les moulures d'origine. Le mobilier, en partie sur-mesure, a été dessiné pour s'intégrer parfaitement aux proportions des pièces.
           </p>
-          <p>
+          <p class="reveal" style="transition-delay:0.15s;">
             La cuisine, anciennement cloisonnée, a été ouverte sur le salon pour créer un espace de vie fluide et généreux. Une verrière d'atelier sépare visuellement les deux espaces tout en préservant la lumière.
           </p>
         </div>
 
-        <!-- Infos complémentaires à droite -->
-        <div>
-          <div style="border-top:1px solid var(--light); padding-top:1.5rem; margin-bottom:2rem;">
-            <p style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid); margin-bottom:1rem;">Détails du projet</p>
-            <ul style="display:flex; flex-direction:column; gap:0.6rem;">
-              <li style="font-size:0.8rem; color:var(--mid);">— Rénovation complète toutes surfaces</li>
-              <li style="font-size:0.8rem; color:var(--mid);">— Ouverture de la cuisine sur salon</li>
-              <li style="font-size:0.8rem; color:var(--mid);">— Verrière atelier sur mesure</li>
-              <li style="font-size:0.8rem; color:var(--mid);">— Mobilier dessiné par l'agence</li>
-              <li style="font-size:0.8rem; color:var(--mid);">— Parquet point de Hongrie chêne</li>
-              <li style="font-size:0.8rem; color:var(--mid);">— Salle de bain en marbre de Carrare</li>
+        <div class="reveal" style="transition-delay:0.1s;">
+          <div style="border-top:1px solid var(--border); padding-top:var(--space-sm); margin-bottom:var(--space-sm);">
+            <p style="font-size:var(--fs-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem;">Détails du projet</p>
+            <ul style="display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Rénovation complète toutes surfaces</li>
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Ouverture de la cuisine sur salon</li>
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Verrière atelier sur mesure</li>
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Mobilier dessiné par l'agence</li>
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Parquet point de Hongrie chêne</li>
+              <li style="font-size:var(--fs-small); color:var(--mid);">— Salle de bain en marbre de Carrare</li>
             </ul>
           </div>
-          <a href="../contact.html" style="display:inline-block; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--dark); padding-bottom:2px;">
-            Nous confier un projet similaire
-          </a>
+          <a href="../contact.html" class="link-underline">Nous confier un projet similaire</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERIE -->
   <section>
     <div class="container">
       <div class="projet-gallery">
-        <div style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
-        <div style="background:linear-gradient(160deg,#BBB5B0,#9C9893); aspect-ratio:4/3;"></div>
-        <div style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0); aspect-ratio:4/3;"></div>
-        <div style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#BBB5B0,#9C9893); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#CCC7C1,#AFA9A4); aspect-ratio:4/3;"></div>
       </div>
-      <!-- Image pleine largeur -->
-      <div style="background:linear-gradient(160deg,#B8B3AE,#9D9994); aspect-ratio:21/9; margin-bottom:1rem;"></div>
+      <div class="reveal-scale" style="background:linear-gradient(160deg,#B8B3AE,#9D9994); aspect-ratio:21/9; margin-bottom:1rem;"></div>
       <div class="projet-gallery">
-        <div style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); aspect-ratio:4/3;"></div>
-        <div style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); aspect-ratio:4/3;"></div>
+        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
       </div>
     </div>
   </section>
 
-  <!-- NAVIGATION PROJET SUIVANT / PRÉCÉDENT -->
   <div class="container">
     <div class="projet-nav-bottom">
-      <a href="projet-batignolles.html" class="projet-nav-link">
+      <a href="projet-batignolles.html" class="projet-nav-link reveal">
         <span class="dir">← Projet précédent</span>
         <span class="proj-name">Batignolles</span>
       </a>
-      <a href="projet-saint-mande.html" class="projet-nav-link next">
+      <a href="projet-saint-mande.html" class="projet-nav-link next reveal" style="transition-delay:0.08s;">
         <span class="dir">Projet suivant →</span>
         <span class="proj-name">Saint-Mandé</span>
       </a>
     </div>
   </div>
 
-  <!-- TEXTE SEO -->
   <div class="container">
     <div class="projet-seo">
-      <p>
-        Agence MIND, cabinet d'architecture intérieure basé à Paris, a réalisé la rénovation complète de cet appartement haussmannien dans le 10e arrondissement. Ce projet illustre notre approche de la rénovation résidentielle haut de gamme à Paris : respect du patrimoine architectural, optimisation des espaces de vie et sélection rigoureuse des matériaux. Spécialisée dans la rénovation d'appartements parisiens, de studios aux grands appartements familiaux, l'Agence MIND intervient sur l'ensemble du territoire français et à l'international. Fondée par Marine Prigent, architecte d'intérieur diplômée, l'agence propose des missions complètes incluant conception, direction artistique, prescription mobilier et maîtrise d'œuvre. Chaque projet est traité avec la même rigueur et le même soin, quelle que soit la surface ou la complexité des travaux.
-      </p>
+      <p>Agence MIND, cabinet d'architecture intérieure basé à Paris, a réalisé la rénovation complète de cet appartement haussmannien dans le 10e arrondissement. Ce projet illustre notre approche de la rénovation résidentielle haut de gamme à Paris : respect du patrimoine architectural, optimisation des espaces de vie et sélection rigoureuse des matériaux. Spécialisée dans la rénovation d'appartements parisiens, de studios aux grands appartements familiaux, l'Agence MIND intervient sur l'ensemble du territoire français et à l'international.</p>
     </div>
   </div>
 
-    <div class="projects-list-section">
+  <div class="projects-list-section">
     <div class="container">
       <div class="projects-list">
-        <a href="projet-hauteville.html" class="current">Hauteville</a><span class="sep">·</span>
-        <a href="projet-batignolles.html">Batignolles</a><span class="sep">·</span>
-        <a href="projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span>
-        <a href="projet-yazigi.html">Yazigi</a><span class="sep">·</span>
-        <a href="projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span>
-        <a href="projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span>
-        <a href="projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span>
-        <a href="projet-explain.html">Explain</a><span class="sep">·</span>
-        <a href="projet-accelency.html">Accelency</a><span class="sep">·</span>
-        <a href="projet-minorque.html">Minorque</a><span class="sep">·</span>
-        <a href="projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span>
-        <a href="projet-londres-islington.html">Londres Islington</a><span class="sep">·</span>
-        <a href="projet-porto.html">Porto Antunes</a><span class="sep">·</span>
-        <a href="projet-quincampoix.html">Quincampoix</a><span class="sep">·</span>
-        <a href="projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span>
-        <a href="projet-poliveau.html">Poliveau</a><span class="sep">·</span>
-        <a href="projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span>
-        <a href="projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span>
-        <a href="projet-hec-alumni.html">HEC Alumni</a>
+        <a href="projet-hauteville.html" class="current">Hauteville</a><span class="sep">·</span><a href="projet-batignolles.html">Batignolles</a><span class="sep">·</span><a href="projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span><a href="projet-yazigi.html">Yazigi</a><span class="sep">·</span><a href="projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span><a href="projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span><a href="projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span><a href="projet-explain.html">Explain</a><span class="sep">·</span><a href="projet-accelency.html">Accelency</a><span class="sep">·</span><a href="projet-minorque.html">Minorque</a><span class="sep">·</span><a href="projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span><a href="projet-londres-islington.html">Londres Islington</a><span class="sep">·</span><a href="projet-porto.html">Porto Antunes</a><span class="sep">·</span><a href="projet-quincampoix.html">Quincampoix</a><span class="sep">·</span><a href="projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span><a href="projet-poliveau.html">Poliveau</a><span class="sep">·</span><a href="projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span><a href="projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span><a href="projet-hec-alumni.html">HEC Alumni</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <h2>MIND</h2>
-          <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
-          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
-            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
-            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="../realisations.html">Réalisations</a></li>
-            <li><a href="../presse.html">Presse</a></li>
-            <li><a href="../agence.html">L'Agence</a></li>
-            <li><a href="../services.html">Prestations</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Adresses</h4>
-          <ul>
-            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
-            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="../contact.html">Prendre contact</a></li>
-            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
-          </ul>
-        </div>
+        <div class="footer-brand"><h2>MIND</h2><p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p><div class="footer-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a></div></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="../realisations.html">Réalisations</a></li><li><a href="../presse.html">Presse</a></li><li><a href="../agence.html">L'Agence</a></li><li><a href="../services.html">Prestations</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="../contact.html">Prendre contact</a></li><li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Agence MIND. Tous droits réservés.</span>
-        <span>Mentions légales</span>
-      </div>
+      <div class="footer-bottom"><span>© 2025 Agence MIND. Tous droits réservés.</span><span>Mentions légales</span></div>
     </div>
   </footer>
 
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
 </body>

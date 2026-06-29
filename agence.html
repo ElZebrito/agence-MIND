@@ -10,10 +10,7 @@
 <body>
 
   <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      MIND
-      <span>Architecture · Design · Décoration</span>
-    </a>
+    <a href="index.html" class="nav-logo">MIND<span>Architecture · Design · Décoration</span></a>
     <ul class="nav-links">
       <li><a href="realisations.html">Réalisations</a></li>
       <li><a href="presse.html">Presse</a></li>
@@ -21,26 +18,31 @@
       <li><a href="services.html">Prestations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- AGENCE HERO — portrait + bio -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="realisations.html">Réalisations</a>
+    <a href="presse.html">Presse</a>
+    <a href="agence.html">L'Agence</a>
+    <a href="services.html">Prestations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
   <section>
     <div class="container">
       <div class="agence-hero">
-        <div class="agence-portrait" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);">
-          <!-- Photo portrait Marine Prigent à insérer -->
-        </div>
+        <div class="agence-portrait reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);"></div>
         <div class="agence-bio">
-          <p class="section-label">Marine Prigent, Fondatrice</p>
-          <h1>Un regard qui<br>transforme les espaces</h1>
-          <blockquote>
+          <p class="section-label reveal-line">Marine Prigent, Fondatrice</p>
+          <h1 class="reveal">Un regard qui<br>transforme les espaces</h1>
+          <blockquote class="reveal" style="transition-delay:0.1s;">
             "Un sens aigu de l'espace, une connaissance parfaite des matériaux et des dernières innovations techniques autorisent tous les possibles lorsqu'il s'agit de réinventer l'identité et la fonctionnalité d'un lieu."
           </blockquote>
-          <p>
+          <p class="reveal" style="transition-delay:0.15s;">
             Diplômée en architecture intérieure, Marine Prigent fonde l'Agence MIND en 2009 avec une conviction : que l'architecture d'intérieur doit être à la fois un acte créatif et un acte de soin. Soin du lieu, soin du client, soin des détails.
           </p>
-          <p>
+          <p class="reveal" style="transition-delay:0.2s;">
             En plus de quinze ans de pratique, elle a développé une signature reconnaissable — des espaces élégants, chaleureux, où chaque matière et chaque couleur sont choisies avec intention. Ses projets l'ont menée de Paris à Londres, de Porto à Minorque, toujours avec la même exigence.
           </p>
         </div>
@@ -48,27 +50,26 @@
     </div>
   </section>
 
-  <!-- AWARDS -->
-  <section style="border-top:1px solid var(--light);">
+  <section style="border-top:1px solid var(--border);">
     <div class="container">
-      <p class="section-label" style="padding-top:var(--gap);">Reconnaissances & distinctions</p>
+      <p class="section-label reveal-line" style="padding-top:var(--space-lg);">Reconnaissances & distinctions</p>
       <div class="awards-grid">
-        <div class="award-card">
+        <div class="award-card reveal" style="transition-delay:0s;">
           <div class="award-icon">◈</div>
           <h4>Journées à Vivre</h4>
           <p>Lauréate du prix de l'architecture d'intérieur</p>
         </div>
-        <div class="award-card">
+        <div class="award-card reveal" style="transition-delay:0.08s;">
           <div class="award-icon">◈</div>
           <h4>Best of Houzz</h4>
           <p>Service & Design — plusieurs années consécutives</p>
         </div>
-        <div class="award-card">
+        <div class="award-card reveal" style="transition-delay:0.16s;">
           <div class="award-icon">◈</div>
           <h4>Jury — Académie Charpentier</h4>
           <p>Jurée des diplômes Lisa & Académie Charpentier, Paris</p>
         </div>
-        <div class="award-card">
+        <div class="award-card reveal" style="transition-delay:0.24s;">
           <div class="award-icon">◈</div>
           <h4>Presse internationale</h4>
           <p>Marie Claire Maison, Living Etc UK, Côté Ouest, A Vivre</p>
@@ -77,116 +78,65 @@
     </div>
   </section>
 
-  <!-- PARCOURS / TIMELINE -->
-  <section style="padding: var(--gap) 0; border-top:1px solid var(--light);">
+  <section style="padding:var(--space-lg) 0; border-top:1px solid var(--border);">
     <div class="container">
-      <p class="section-label">Parcours</p>
-      <div class="text-left" style="margin-bottom:3rem;">
-        <h2 style="font-size:clamp(1.8rem,3vw,2.8rem); font-style:italic;">Les grandes étapes</h2>
+      <p class="section-label reveal-line">Parcours</p>
+      <div style="max-width:520px; margin-bottom:var(--space-md);">
+        <h2 class="reveal" style="font-size:var(--fs-h2); font-style:italic; font-weight:300;">Les grandes étapes</h2>
       </div>
     </div>
     <div class="container" style="position:relative;">
-      <div style="position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--light);"></div>
+      <div style="position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--border);"></div>
       <div class="timeline-items">
-
-        <div class="timeline-item">
-          <div class="t-content">
-            <div class="t-year">2009</div>
-            <h4>Fondation de l'Agence MIND</h4>
-            <p>Création du cabinet à Paris, avec une première clientèle de particuliers dans le résidentiel haut de gamme.</p>
-          </div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-empty"></div>
+        <div class="timeline-item reveal">
+          <div class="t-content"><div class="t-year">2009</div><h4>Fondation de l'Agence MIND</h4><p>Création du cabinet à Paris, avec une première clientèle de particuliers dans le résidentiel haut de gamme.</p></div>
+          <div class="t-dot"><div class="t-dot-inner"></div></div><div class="t-empty"></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-empty"></div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-content">
-            <div class="t-year">2012</div>
-            <h4>Premières parutions presse</h4>
-            <p>Découverte par les magazines spécialisés. Premières publications dans Marie Claire Maison et Côté Ouest.</p>
-          </div>
+        <div class="timeline-item reveal">
+          <div class="t-empty"></div><div class="t-dot"><div class="t-dot-inner"></div></div>
+          <div class="t-content"><div class="t-year">2012</div><h4>Premières parutions presse</h4><p>Découverte par les magazines spécialisés. Premières publications dans Marie Claire Maison et Côté Ouest.</p></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-content">
-            <div class="t-year">2015</div>
-            <h4>Ouverture à l'international</h4>
-            <p>Premiers projets hors de France — Royaume-Uni, Portugal et Espagne. Développement d'un réseau de maîtrise d'œuvre européen.</p>
-          </div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-empty"></div>
+        <div class="timeline-item reveal">
+          <div class="t-content"><div class="t-year">2015</div><h4>Ouverture à l'international</h4><p>Premiers projets hors de France — Royaume-Uni, Portugal et Espagne. Développement d'un réseau de maîtrise d'œuvre européen.</p></div>
+          <div class="t-dot"><div class="t-dot-inner"></div></div><div class="t-empty"></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-empty"></div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-content">
-            <div class="t-year">2017</div>
-            <h4>Best of Houzz — première distinction</h4>
-            <p>Reconnaissance par la communauté Houzz pour la qualité du service et de la conception. Distinction reconduite les années suivantes.</p>
-          </div>
+        <div class="timeline-item reveal">
+          <div class="t-empty"></div><div class="t-dot"><div class="t-dot-inner"></div></div>
+          <div class="t-content"><div class="t-year">2017</div><h4>Best of Houzz — première distinction</h4><p>Reconnaissance par la communauté Houzz pour la qualité du service et de la conception.</p></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-content">
-            <div class="t-year">2019</div>
-            <h4>Journées à Vivre — lauréate</h4>
-            <p>Prix décerné par le magazine A Vivre Architectures récompensant une réalisation résidentielle remarquable.</p>
-          </div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-empty"></div>
+        <div class="timeline-item reveal">
+          <div class="t-content"><div class="t-year">2019</div><h4>Journées à Vivre — lauréate</h4><p>Prix décerné par le magazine A Vivre Architectures récompensant une réalisation résidentielle remarquable.</p></div>
+          <div class="t-dot"><div class="t-dot-inner"></div></div><div class="t-empty"></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-empty"></div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-content">
-            <div class="t-year">2021</div>
-            <h4>Jury — Lisa & Académie Charpentier</h4>
-            <p>Marine Prigent rejoint le jury des diplômes de deux écoles parisiennes de référence en design d'intérieur.</p>
-          </div>
+        <div class="timeline-item reveal">
+          <div class="t-empty"></div><div class="t-dot"><div class="t-dot-inner"></div></div>
+          <div class="t-content"><div class="t-year">2021</div><h4>Jury — Lisa & Académie Charpentier</h4><p>Marine Prigent rejoint le jury des diplômes de deux écoles parisiennes de référence en design d'intérieur.</p></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-content">
-            <div class="t-year">2023</div>
-            <h4>Archi Social Club</h4>
-            <p>Co-fondation de l'Archi Social Club, espace dédié aux acteurs de l'architecture d'intérieur à Paris, rue Ernest Psychari.</p>
-          </div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-empty"></div>
+        <div class="timeline-item reveal">
+          <div class="t-content"><div class="t-year">2023</div><h4>Archi Social Club</h4><p>Co-fondation de l'Archi Social Club, espace dédié aux acteurs de l'architecture d'intérieur à Paris, rue Ernest Psychari.</p></div>
+          <div class="t-dot"><div class="t-dot-inner"></div></div><div class="t-empty"></div>
         </div>
-
-        <div class="timeline-item">
-          <div class="t-empty"></div>
-          <div class="t-dot"><div class="t-dot-inner"></div></div>
-          <div class="t-content">
-            <div class="t-year">2025</div>
-            <h4>+20 projets en cours</h4>
-            <p>Un portefeuille de projets résidentiels et professionnels en France et à l'international, avec une équipe agile et réactive.</p>
-          </div>
+        <div class="timeline-item reveal">
+          <div class="t-empty"></div><div class="t-dot"><div class="t-dot-inner"></div></div>
+          <div class="t-content"><div class="t-year">2025</div><h4>+20 projets en cours</h4><p>Un portefeuille de projets résidentiels et professionnels en France et à l'international.</p></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- VALEURS -->
-  <section style="border-top:1px solid var(--light); padding:var(--gap) 0;">
+  <section style="border-top:1px solid var(--border); padding:var(--space-lg) 0;">
     <div class="container">
-      <p class="section-label" style="margin-bottom:2rem;">Nos valeurs</p>
+      <p class="section-label reveal-line" style="margin-bottom:var(--space-md);">Nos valeurs</p>
       <div class="values-grid">
-        <div class="value-item">
+        <div class="value-item reveal">
           <h3>Élégance & bon goût</h3>
           <p>Chaque projet est une composition soigneuse de matières, de couleurs et de lumière. Nous ne suivons pas les tendances — nous construisons des intérieurs qui traversent le temps avec grâce.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item reveal" style="transition-delay:0.1s;">
           <h3>Humanité & proximité</h3>
           <p>Nous prenons le temps d'écouter. De comprendre comment vous vivez, ce que vous aimez, ce dont vous avez besoin. Ce soin pour la personne derrière le projet est ce qui rend chaque réalisation unique.</p>
         </div>
-        <div class="value-item">
+        <div class="value-item reveal" style="transition-delay:0.2s;">
           <h3>Rigueur technique</h3>
           <p>L'élégance ne s'obtient pas sans maîtrise. Chaque plan, chaque prescription, chaque détail de chantier est traité avec la même exigence. Nous tenons nos budgets et nos plannings.</p>
         </div>
@@ -194,29 +144,24 @@
     </div>
   </section>
 
-  <!-- ARCHI SOCIAL CLUB -->
-  <section class="asc-section">
-    <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; padding:var(--gap) clamp(1.5rem,5vw,4rem);">
-      <div class="asc-image" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;">
-        <!-- Image Archi Social Club -->
-      </div>
+  <section style="border-top:1px solid var(--border);">
+    <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,6rem); align-items:center; padding:var(--space-lg) clamp(1.5rem,4vw,3rem);">
+      <div class="asc-image reveal-scale" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);"></div>
       <div>
-        <p class="section-label">Notre espace</p>
-        <h2 style="font-size:clamp(1.6rem,2.5vw,2.5rem); font-style:italic; margin-bottom:1.5rem;">Archi Social Club</h2>
-        <p style="font-size:0.88rem; color:var(--mid); line-height:1.9; margin-bottom:1rem;">
+        <p class="section-label reveal-line">Notre espace</p>
+        <h2 class="reveal" style="font-size:var(--fs-h2); font-style:italic; font-weight:300; margin-bottom:var(--space-sm);">Archi Social Club</h2>
+        <p class="reveal" style="transition-delay:0.1s; font-size:var(--fs-body); color:var(--mid); line-height:1.9; margin-bottom:0.8rem;">
           L'Archi Social Club est un espace de bureaux, de showroom et d'échange dédié aux acteurs de l'architecture d'intérieur, installé rue Ernest Psychari à Paris (7e).
         </p>
-        <p style="font-size:0.88rem; color:var(--mid); line-height:1.9; margin-bottom:1.5rem;">
-          Co-fondé par Marine Prigent, il réunit professionnels et passionnés autour de projets collaboratifs, d'événements et d'expositions — un lieu vivant où se croisent créativité, expertise et convivialité au cœur de Paris.
+        <p class="reveal" style="transition-delay:0.15s; font-size:var(--fs-body); color:var(--mid); line-height:1.9; margin-bottom:var(--space-sm);">
+          Co-fondé par Marine Prigent, il réunit professionnels et passionnés autour de projets collaboratifs, d'événements et d'expositions.
         </p>
-        <a href="contact.html" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--dark); padding-bottom:2px;">
-          Nous rendre visite
-        </a>
+        <a href="contact.html" class="link-underline reveal" style="transition-delay:0.2s;">Nous rendre visite</a>
       </div>
     </div>
   </section>
 
-    <div class="projects-list-section">
+  <div class="projects-list-section">
     <div class="container">
       <div class="projects-list">
         <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span>
@@ -242,53 +187,37 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <h2>MIND</h2>
           <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
-          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
-            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
-            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="presse.html">Presse</a></li>
-            <li><a href="agence.html">L'Agence</a></li>
-            <li><a href="services.html">Prestations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Adresses</h4>
-          <ul>
-            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
-            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="contact.html">Prendre contact</a></li>
-            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="realisations.html">Réalisations</a></li><li><a href="presse.html">Presse</a></li><li><a href="agence.html">L'Agence</a></li><li><a href="services.html">Prestations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Prendre contact</a></li><li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Agence MIND. Tous droits réservés.</span>
-        <span>Mentions légales</span>
-      </div>
+      <div class="footer-bottom"><span>© 2025 Agence MIND. Tous droits réservés.</span><span>Mentions légales</span></div>
     </div>
   </footer>
 
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
 </body>

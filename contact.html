@@ -10,10 +10,7 @@
 <body>
 
   <nav id="main-nav">
-    <a href="index.html" class="nav-logo">
-      MIND
-      <span>Architecture · Design · Décoration</span>
-    </a>
+    <a href="index.html" class="nav-logo">MIND<span>Architecture · Design · Décoration</span></a>
     <ul class="nav-links">
       <li><a href="realisations.html">Réalisations</a></li>
       <li><a href="presse.html">Presse</a></li>
@@ -21,45 +18,51 @@
       <li><a href="services.html">Prestations</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="realisations.html">Réalisations</a>
+    <a href="presse.html">Presse</a>
+    <a href="agence.html">L'Agence</a>
+    <a href="services.html">Prestations</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
   <section>
     <div class="container">
       <div class="contact-grid">
 
-        <!-- Infos -->
         <div class="contact-info">
-          <p class="section-label">Parlons de votre projet</p>
-          <h1>Nous<br>contacter</h1>
+          <p class="section-label reveal-line">Parlons de votre projet</p>
+          <h1 class="reveal">Nous<br>contacter</h1>
 
-          <div class="contact-block">
+          <div class="contact-block reveal" style="transition-delay:0.1s;">
             <h4>Siège social</h4>
             <p>70 Rue d'Hauteville<br>75010 Paris</p>
           </div>
 
-          <div class="contact-block">
+          <div class="contact-block reveal" style="transition-delay:0.15s;">
             <h4>Bureau & Showroom</h4>
             <p>Archi Social Club<br>Rue Ernest Psychari<br>75007 Paris</p>
           </div>
 
-          <div class="contact-block">
+          <div class="contact-block reveal" style="transition-delay:0.2s;">
             <h4>Email</h4>
             <a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a>
           </div>
 
-          <div class="contact-block">
+          <div class="contact-block reveal" style="transition-delay:0.25s;">
             <h4>Réseaux</h4>
             <p>
-              <a href="https://instagram.com" target="_blank" style="display:block; margin-bottom:0.3rem;">Instagram</a>
-              <a href="https://houzz.com" target="_blank">Houzz</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" style="display:block; margin-bottom:0.3rem;">Instagram</a>
+              <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
             </p>
           </div>
         </div>
 
-        <!-- Formulaire -->
-        <div class="contact-form">
-          <p class="section-label" style="margin-bottom:2rem;">Formulaire de contact</p>
+        <div class="contact-form reveal" style="transition-delay:0.1s;">
+          <p class="section-label" style="margin-bottom:var(--space-sm);">Formulaire de contact</p>
 
           <div class="form-row">
             <div class="form-group">
@@ -149,79 +152,38 @@
     </div>
   </section>
 
-    <div class="projects-list-section">
+  <div class="projects-list-section">
     <div class="container">
       <div class="projects-list">
-        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span>
-        <a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span>
-        <a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span>
-        <a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span>
-        <a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span>
-        <a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span>
-        <a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span>
-        <a href="pages/projet-explain.html">Explain</a><span class="sep">·</span>
-        <a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span>
-        <a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span>
-        <a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span>
-        <a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span>
-        <a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span>
-        <a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span>
-        <a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span>
-        <a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span>
-        <a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span>
-        <a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span>
-        <a href="pages/projet-hec-alumni.html">HEC Alumni</a>
+        <a href="pages/projet-hauteville.html">Hauteville</a><span class="sep">·</span><a href="pages/projet-batignolles.html">Batignolles</a><span class="sep">·</span><a href="pages/projet-saint-mande.html">Saint-Mandé</a><span class="sep">·</span><a href="pages/projet-yazigi.html">Yazigi</a><span class="sep">·</span><a href="pages/projet-petites-ecuries.html">Petites Écuries</a><span class="sep">·</span><a href="pages/projet-hay-les-roses.html">L'Haÿ-les-Roses</a><span class="sep">·</span><a href="pages/projet-archi-social-club.html">Archi Social Club</a><span class="sep">·</span><a href="pages/projet-explain.html">Explain</a><span class="sep">·</span><a href="pages/projet-accelency.html">Accelency</a><span class="sep">·</span><a href="pages/projet-minorque.html">Minorque</a><span class="sep">·</span><a href="pages/projet-londres-highbury.html">Londres Highbury</a><span class="sep">·</span><a href="pages/projet-londres-islington.html">Londres Islington</a><span class="sep">·</span><a href="pages/projet-porto.html">Porto Antunes</a><span class="sep">·</span><a href="pages/projet-quincampoix.html">Quincampoix</a><span class="sep">·</span><a href="pages/projet-quai-tourelle.html">Quai de la Tourelle</a><span class="sep">·</span><a href="pages/projet-poliveau.html">Poliveau</a><span class="sep">·</span><a href="pages/projet-croix-nivert.html">Croix Nivert</a><span class="sep">·</span><a href="pages/projet-gournay.html">Delpoio Gournay</a><span class="sep">·</span><a href="pages/projet-hec-alumni.html">HEC Alumni</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <h2>MIND</h2>
-          <p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p>
-          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
-            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
-            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="presse.html">Presse</a></li>
-            <li><a href="agence.html">L'Agence</a></li>
-            <li><a href="services.html">Prestations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Adresses</h4>
-          <ul>
-            <li><a>70 Rue d'Hauteville<br>75010 Paris</a></li>
-            <li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="contact.html">Prendre contact</a></li>
-            <li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li>
-          </ul>
-        </div>
+        <div class="footer-brand"><h2>MIND</h2><p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p><div class="footer-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a></div></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="realisations.html">Réalisations</a></li><li><a href="presse.html">Presse</a></li><li><a href="agence.html">L'Agence</a></li><li><a href="services.html">Prestations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Prendre contact</a></li><li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Agence MIND. Tous droits réservés.</span>
-        <span>Mentions légales</span>
-      </div>
+      <div class="footer-bottom"><span>© 2025 Agence MIND. Tous droits réservés.</span><span>Mentions légales</span></div>
     </div>
   </footer>
 
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
 </body>

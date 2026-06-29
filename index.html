@@ -6,19 +6,6 @@
   <title>Agence MIND — Architecture · Design · Décoration</title>
   <meta name="description" content="Agence MIND, cabinet d'architecture intérieure fondé par Marine Prigent à Paris. Rénovation résidentielle, bureaux et hospitality en France et à l'international.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Placeholder images via gradient */
-    .img-placeholder { background: linear-gradient(135deg, #D4CEC7 0%, #B8B2AA 100%); }
-    .img-placeholder-dark { background: linear-gradient(135deg, #B8B2AA 0%, #9A9490 100%); }
-
-    /* Color image blocks for demo */
-    .demo-img-1 { background: linear-gradient(160deg, #C9C3BC 0%, #A8A49F 100%); }
-    .demo-img-2 { background: linear-gradient(160deg, #D6D1CC 0%, #BBB5B0 100%); }
-    .demo-img-3 { background: linear-gradient(160deg, #B5B0AB 0%, #9C9893 100%); }
-    .demo-img-4 { background: linear-gradient(160deg, #CCC7C1 0%, #AFA9A4 100%); }
-    .demo-img-5 { background: linear-gradient(160deg, #D9D4CF 0%, #C0BBB6 100%); }
-    .demo-img-6 { background: linear-gradient(160deg, #B8B3AE 0%, #9D9994 100%); }
-  </style>
 </head>
 <body>
 
@@ -35,29 +22,35 @@
       <li><a href="services.html">Prestations</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu">
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="realisations.html" onclick="toggleMenu()">Réalisations</a>
+    <a href="presse.html" onclick="toggleMenu()">Presse</a>
+    <a href="agence.html" onclick="toggleMenu()">L'Agence</a>
+    <a href="services.html" onclick="toggleMenu()">Prestations</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-image demo-img-1">
-      <!-- image projet à insérer -->
+    <div class="hero-image" style="background:linear-gradient(160deg,#D4CEC7 0%,#B8B2AA 100%);">
     </div>
     <div class="hero-content">
-      <p class="section-label">Paris · Europe · International</p>
-      <h1>Réinventer<br>chaque espace</h1>
-      <p>Cabinet d'architecture intérieure fondé par Marine Prigent. Nous transformons vos espaces de vie et de travail avec élégance et précision.</p>
-      <span class="hero-scroll">Découvrir les projets</span>
+      <h1 class="reveal">Réinventer<br>chaque espace</h1>
+      <p class="reveal" style="transition-delay:0.1s;">Cabinet d'architecture intérieure fondé par Marine Prigent. Nous transformons vos espaces de vie et de travail avec élégance et précision.</p>
+      <a href="realisations.html" class="hero-scroll reveal" style="transition-delay:0.2s;">Découvrir les projets</a>
     </div>
   </section>
 
   <!-- PROJETS INTRO -->
   <section class="projects-intro">
     <div class="container">
-      <p class="section-label">Réalisations sélectionnées</p>
-      <h2>Un regard singulier<br>sur chaque projet</h2>
+      <h2 class="reveal">Un regard singulier<br>sur chaque projet</h2>
     </div>
   </section>
 
@@ -65,71 +58,67 @@
   <div class="container">
     <div class="grid-projects">
 
-      <!-- Rangée 1 -->
-      <a href="pages/projet-hauteville.html" class="project-card card-wide">
-        <div class="img-wrap demo-img-2" style="width:100%; aspect-ratio:16/10;"></div>
+      <a href="pages/projet-hauteville.html" class="project-card card-wide reveal">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0); width:100%; aspect-ratio:16/10;"></div>
         <div class="project-card-info">
           <h3>Hauteville</h3>
           <span>Résidentiel · Paris</span>
         </div>
       </a>
-      <a href="pages/projet-yazigi.html" class="project-card card-med">
-        <div class="img-wrap demo-img-3" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-yazigi.html" class="project-card card-med reveal" style="transition-delay:0.1s;">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Yazigi</h3>
           <span>Résidentiel · Paris</span>
         </div>
       </a>
 
-      <!-- Rangée 2 -->
-      <a href="pages/projet-saint-mande.html" class="project-card card-med">
-        <div class="img-wrap demo-img-4" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-saint-mande.html" class="project-card card-med reveal">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Saint-Mandé</h3>
           <span>Résidentiel · Maison</span>
         </div>
       </a>
-      <a href="pages/projet-minorque.html" class="project-card card-wide">
-        <div class="img-wrap demo-img-1" style="width:100%; aspect-ratio:16/10;"></div>
+      <a href="pages/projet-minorque.html" class="project-card card-wide reveal" style="transition-delay:0.1s;">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); width:100%; aspect-ratio:16/10;"></div>
         <div class="project-card-info">
           <h3>Minorque</h3>
           <span>Résidentiel · International</span>
         </div>
       </a>
 
-      <!-- Rangée 3 -->
-      <a href="pages/projet-archi-social-club.html" class="project-card card-third">
-        <div class="img-wrap demo-img-5" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-archi-social-club.html" class="project-card card-third reveal">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#B8B3AE,#9D9994); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Archi Social Club</h3>
           <span>Bureaux · Paris</span>
         </div>
       </a>
-      <a href="pages/projet-londres-highbury.html" class="project-card card-third">
-        <div class="img-wrap demo-img-6" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-londres-highbury.html" class="project-card card-third reveal" style="transition-delay:0.08s;">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#D9D4CF,#C0BBB6); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Londres Highbury</h3>
           <span>Résidentiel · International</span>
         </div>
       </a>
-      <a href="pages/projet-porto.html" class="project-card card-third">
-        <div class="img-wrap demo-img-2" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-porto.html" class="project-card card-third reveal" style="transition-delay:0.16s;">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Porto Antunes</h3>
           <span>Maison de vacances</span>
         </div>
       </a>
 
-      <!-- Rangée 4 -->
-      <a href="pages/projet-explain.html" class="project-card card-half">
-        <div class="img-wrap demo-img-3" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-explain.html" class="project-card card-half reveal">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#BBB5B0,#9C9893); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Explain</h3>
           <span>Bureaux · Paris</span>
         </div>
       </a>
-      <a href="pages/projet-quincampoix.html" class="project-card card-half">
-        <div class="img-wrap demo-img-4" style="width:100%; aspect-ratio:4/3;"></div>
+      <a href="pages/projet-quincampoix.html" class="project-card card-half reveal" style="transition-delay:0.1s;">
+        <div class="img-wrap" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4); width:100%; aspect-ratio:4/3;"></div>
         <div class="project-card-info">
           <h3>Quincampoix</h3>
           <span>Locatif · Paris</span>
@@ -138,26 +127,22 @@
 
     </div>
 
-    <div style="text-align:center; padding-bottom: 4rem;">
-      <a href="realisations.html" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--dark); padding-bottom:2px;">
-        Voir tous les projets
-      </a>
+    <div style="text-align:center; padding-bottom:var(--space-lg);">
+      <a href="realisations.html" class="see-all reveal">Voir tous les projets</a>
     </div>
   </div>
 
   <!-- CITATION -->
-  <section style="padding: var(--gap) 0; border-top: 1px solid var(--light);">
+  <section class="quote-section">
     <div class="container">
-      <div class="text-right">
-        <blockquote style="font-family:'Lora',serif; font-style:italic; font-size:clamp(1.1rem,2vw,1.5rem); line-height:1.7; color:var(--dark);">
-          "Un sens aigu de l'espace, une connaissance parfaite des matériaux et des dernières innovations techniques autorisent tous les possibles lorsqu'il s'agit de réinventer l'identité et la fonctionnalité d'un lieu."
-        </blockquote>
-        <p style="margin-top:1.5rem; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid);">Marine Prigent, Fondatrice</p>
-      </div>
+      <blockquote class="reveal">
+        "Un sens aigu de l'espace, une connaissance parfaite des matériaux et des dernières innovations techniques autorisent tous les possibles lorsqu'il s'agit de réinventer l'identité et la fonctionnalité d'un lieu."
+      </blockquote>
+      <p class="quote-author reveal" style="transition-delay:0.1s;">Marine Prigent, Fondatrice</p>
     </div>
   </section>
 
-  <!-- TICKER PROJETS (au-dessus du footer) -->
+  <!-- TICKER -->
   <div class="projects-ticker">
     <div class="ticker-track">
       <a href="pages/projet-hauteville.html">Hauteville</a>
@@ -179,7 +164,6 @@
       <a href="pages/projet-croix-nivert.html">Croix Nivert</a>
       <a href="pages/projet-gournay.html">Delpoio Gournay</a>
       <a href="pages/projet-hec-alumni.html">HEC Alumni</a>
-      <!-- duplicate for seamless loop -->
       <a href="pages/projet-hauteville.html">Hauteville</a>
       <a href="pages/projet-batignolles.html">Batignolles</a>
       <a href="pages/projet-saint-mande.html">Saint-Mandé</a>
@@ -211,9 +195,9 @@
           <p>Architecture · Design · Décoration<br><br>
           Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>
           Paris · Europe · International</p>
-          <div style="margin-top:1.5rem; display:flex; gap:1.2rem;">
-            <a href="https://instagram.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Instagram</a>
-            <a href="https://houzz.com" target="_blank" style="font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid);">Houzz</a>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
           </div>
         </div>
         <div class="footer-col">
@@ -249,16 +233,35 @@
   </footer>
 
   <script>
-    // Nav scroll effect
+    // Nav scroll
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Active nav link (grow font)
+    // Active nav link
     document.querySelectorAll('.nav-links a').forEach(link => {
       if (link.href === window.location.href) link.classList.add('active');
     });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
 </body>
