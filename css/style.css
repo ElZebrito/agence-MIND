@@ -332,33 +332,46 @@ nav.scrolled {
   line-height: 1.8;
 }
 
-.hero-scroll {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: var(--fs-xs);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.3s, gap 0.4s var(--ease-out);
-}
-
-.hero-scroll:hover {
-  color: var(--ink);
+.hero-cta {
+  display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
-.hero-scroll::before {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 1px;
-  background: currentColor;
-  transition: width 0.4s var(--ease-out);
+.hero-btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.4s var(--ease-out), color 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
 }
 
-.hero-scroll:hover::before { width: 64px; }
+.hero-btn--primary {
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+}
+
+.hero-btn--primary:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+.hero-btn--secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.hero-btn--secondary:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
 
 /* ---- PROJECTS INTRO ---- */
 .projects-intro {
