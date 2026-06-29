@@ -1373,6 +1373,19 @@ footer {
 
 .filter-btn.active::after { width: 100%; }
 
+.filter-sub {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.filter-sub::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
 [data-cat] { transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out); }
 [data-cat].hidden { opacity: 0; pointer-events: none; display: none; }
 
