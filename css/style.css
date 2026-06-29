@@ -1373,17 +1373,15 @@ footer {
 
 .filter-btn.active::after { width: 100%; }
 
-.filter-sub {
-  padding-left: 1rem;
-  position: relative;
+.realisations-subfilter {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.8rem 0 var(--space-sm);
+  padding-left: 0;
 }
 
-.filter-sub::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--muted);
-  font-size: 0.7rem;
+.filter-sub {
+  font-size: 0.75rem;
 }
 
 [data-cat] { transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out); }
