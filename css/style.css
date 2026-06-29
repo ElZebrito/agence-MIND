@@ -135,10 +135,13 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--muted);
   position: relative;
-  transition: color 0.4s var(--ease-out), font-size 0.4s var(--ease-out), font-family 0.4s, letter-spacing 0.4s var(--ease-out);
+  transition: color 0.3s;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+  color: var(--ink);
+}
+
 .nav-links a.active {
   color: var(--ink);
   font-size: 1.7rem;
