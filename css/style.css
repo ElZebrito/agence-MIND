@@ -144,9 +144,8 @@ nav.scrolled {
 .nav-links a.active {
   color: var(--ink);
   font-family: var(--font-display);
-  font-style: italic;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
