@@ -7,19 +7,164 @@
   <meta name="description" content="Rénovation complète d'un appartement haussmannien rue d'Hauteville, Paris 10e. Architecture intérieure par Agence MIND, Marine Prigent.">
   <link rel="stylesheet" href="../css/style.css">
   <style>
+    /* ── Page projet layout ── */
+    .projet-header {
+      padding-top: calc(var(--nav-height) + clamp(2rem, 4vw, 3.5rem));
+      padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .projet-header .section-label { margin-bottom: 0.6rem; }
+    .projet-header h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.05;
+    }
+
+    /* ── Hero split: photo 2/3 + meta 1/3 ── */
+    .projet-hero-split {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      min-height: 72vh;
+    }
+    .projet-hero-photo {
+      position: relative;
+      overflow: hidden;
+      background: #C8C4BE;
+    }
+    .projet-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .projet-hero-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem);
+      border-left: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .projet-meta { display: flex; flex-direction: column; }
+    .projet-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .projet-meta-item:first-child { border-top: 1px solid var(--border); }
+    .projet-meta-item .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .projet-meta-item span:last-child {
+      font-size: var(--fs-small);
+      color: var(--ink);
+    }
+    .projet-meta-cta { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+
+    /* ── Gallery masonry ── */
+    .projet-gallery-masonry {
+      padding: clamp(2rem, 4vw, 4rem) 0;
+    }
+    .masonry-columns {
+      column-count: 3;
+      column-gap: clamp(0.5rem, 1vw, 0.8rem);
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
+      overflow: hidden;
+      display: block;
+      position: relative;
+    }
+    .masonry-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.8s var(--ease-out);
+    }
+    .masonry-item .img-ph {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+    .masonry-item .img-ph.r-4-3  { padding-bottom: 75%; }
+    .masonry-item .img-ph.r-3-4  { padding-bottom: 133.33%; }
+    .masonry-item .img-ph.r-16-9 { padding-bottom: 56.25%; }
+    .masonry-item .img-ph.r-1-1  { padding-bottom: 100%; }
+    .masonry-item .img-ph.r-2-3  { padding-bottom: 150%; }
+    .masonry-item:hover img { transform: scale(1.03); }
+
+    .c1 { background: linear-gradient(160deg, #D4CEC7, #B8B2AA); }
+    .c2 { background: linear-gradient(160deg, #C9C3BC, #A8A49F); }
+    .c3 { background: linear-gradient(160deg, #BBB5B0, #9C9893); }
+    .c4 { background: linear-gradient(160deg, #D6D1CC, #BBB5B0); }
+    .c5 { background: linear-gradient(160deg, #CCC7C1, #AFA9A4); }
+    .c6 { background: linear-gradient(160deg, #B8B3AE, #9D9994); }
+
+    /* ── Text section ── */
+    .projet-texte {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+      border-top: 1px solid var(--border);
+    }
+    .projet-texte-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: start;
+    }
+    .projet-texte h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .projet-texte p {
+      font-size: var(--fs-body);
+      color: var(--mid);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .projet-texte p:last-child { margin-bottom: 0; }
+    .projet-details-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .projet-details ul {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .projet-details li {
+      font-size: var(--fs-small);
+      color: var(--mid);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Nav prev/next ── */
     .projet-nav-bottom {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
       background: var(--border);
-      margin: var(--space-lg) 0;
+      margin: clamp(2rem, 4vw, 4rem) 0;
     }
     .projet-nav-link {
       background: var(--bg);
-      padding: var(--space-md);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.5rem;
       transition: background 0.4s var(--ease-out);
     }
     .projet-nav-link:hover { background: rgba(255,255,255,0.5); }
@@ -32,9 +177,22 @@
     .projet-nav-link .proj-name {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .projet-nav-link.next { text-align: right; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .projet-hero-split { grid-template-columns: 1fr; min-height: unset; }
+      .projet-hero-photo { min-height: 55vw; }
+      .projet-hero-meta { border-left: none; border-top: 1px solid var(--border); }
+      .masonry-columns { column-count: 2; }
+      .projet-texte-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .projet-nav-bottom { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .masonry-columns { column-count: 1; }
+    }
   </style>
 </head>
 <body>
@@ -59,78 +217,148 @@
     <a href="../contact.html">Contact</a>
   </div>
 
-  <section>
+  <!-- TITRE + CATÉGORIE (haut gauche, inchangé) -->
+  <section class="projet-header">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 360px; gap:4rem; align-items:end; padding-top:calc(var(--nav-height) + var(--space-md)); padding-bottom:var(--space-sm);">
-        <div>
-          <p class="section-label reveal-line"><a href="../realisations.html" style="transition:color 0.3s;">Réalisations</a> · Résidentiel</p>
-          <h1 class="reveal" style="font-size:clamp(2.8rem,6vw,5.5rem); font-style:italic; font-weight:300;">Hauteville</h1>
-        </div>
-        <div class="projet-meta reveal" style="transition-delay:0.1s;">
-          <div class="projet-meta-item"><span class="label">Localisation</span><span>Paris 10e</span></div>
-          <div class="projet-meta-item"><span class="label">Typologie</span><span>Appartement — Résidentiel</span></div>
-          <div class="projet-meta-item"><span class="label">Surface</span><span>120 m²</span></div>
-          <div class="projet-meta-item"><span class="label">Prestation</span><span>Mission complète</span></div>
-          <div class="projet-meta-item"><span class="label">Crédit photo</span><span>À renseigner</span></div>
-        </div>
-      </div>
+      <p class="section-label reveal-line">
+        <a href="../realisations.html" style="transition:color 0.3s;">Réalisations</a>
+        &nbsp;·&nbsp; Résidentiel &nbsp;·&nbsp; Paris 10e
+      </p>
+      <h1 class="reveal">Hauteville</h1>
     </div>
   </section>
 
-  <div class="container">
-    <div class="projet-main-image reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);"></div>
+  <!-- PHOTO 2/3 + META 1/3 -->
+  <div class="projet-hero-split">
+    <div class="projet-hero-photo reveal-scale">
+      <img src="../images/hero.jpg" alt="Salon haussmannien rénové — Hauteville, Paris 10e — Agence MIND" loading="eager">
+    </div>
+    <div class="projet-hero-meta reveal" style="transition-delay:0.1s;">
+      <div class="projet-meta">
+        <div class="projet-meta-item">
+          <span class="label">Localisation</span>
+          <span>Paris 10e</span>
+        </div>
+        <div class="projet-meta-item">
+          <span class="label">Typologie</span>
+          <span>Appartement haussmannien</span>
+        </div>
+        <div class="projet-meta-item">
+          <span class="label">Surface</span>
+          <span>120 m²</span>
+        </div>
+        <div class="projet-meta-item">
+          <span class="label">Prestation</span>
+          <span>Mission complète</span>
+        </div>
+        <div class="projet-meta-item">
+          <span class="label">Durée</span>
+          <span>Conception 3 mois · Travaux 8 mois</span>
+        </div>
+        <div class="projet-meta-item">
+          <span class="label">Crédit photo</span>
+          <span>À renseigner</span>
+        </div>
+      </div>
+      <div class="projet-meta-cta">
+        <a href="../contact.html" class="link-underline">Nous confier un projet similaire</a>
+      </div>
+    </div>
   </div>
 
-  <section>
+  <!-- GALERIE MASONRY (style Clara Rhdy) -->
+  <section class="projet-gallery-masonry">
     <div class="container">
-      <div class="projet-content">
-        <div class="projet-text">
-          <h2 class="reveal">Le projet</h2>
+      <div class="masonry-columns">
+        <div class="masonry-item reveal">
+          <div class="img-ph r-3-4 c2"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.04s;">
+          <div class="img-ph r-4-3 c3"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.08s;">
+          <div class="img-ph r-1-1 c4"></div>
+        </div>
+        <div class="masonry-item reveal">
+          <div class="img-ph r-4-3 c5"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.04s;">
+          <div class="img-ph r-3-4 c6"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.08s;">
+          <img src="../images/hero.jpg" alt="Salon haussmannien — Hauteville" loading="lazy">
+        </div>
+        <div class="masonry-item reveal">
+          <div class="img-ph r-2-3 c1"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.04s;">
+          <div class="img-ph r-4-3 c2"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.08s;">
+          <div class="img-ph r-3-4 c5"></div>
+        </div>
+        <div class="masonry-item reveal">
+          <div class="img-ph r-4-3 c3"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.04s;">
+          <div class="img-ph r-1-1 c6"></div>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.08s;">
+          <div class="img-ph r-4-3 c4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTE EXPLICATIF DÉTAILLÉ -->
+  <section class="projet-texte">
+    <div class="container">
+      <div class="projet-texte-grid">
+
+        <div>
+          <h2 class="reveal">Un appartement haussmannien<br>réinventé pour aujourd'hui</h2>
           <p class="reveal" style="transition-delay:0.05s;">
-            Cet appartement haussmannien du 10e arrondissement de Paris a fait l'objet d'une rénovation complète, visant à retrouver l'élégance d'origine tout en l'adaptant à un mode de vie contemporain. Les volumes ont été repensés pour libérer la circulation et maximiser la luminosité naturelle.
+            Situé rue d'Hauteville dans le 10e arrondissement de Paris, cet appartement de 120 m² a bénéficié d'une rénovation complète visant à restituer l'élégance originelle du bâti tout en l'adaptant aux usages contemporains. L'enjeu principal : libérer la circulation entre les pièces sans dénaturer le caractère haussmannien des volumes.
           </p>
-          <p class="reveal" style="transition-delay:0.1s;">
-            Le choix des matières — marbre de Carrare, boiseries peintes en blanc cassé, parquet point de Hongrie — crée une palette intemporelle qui dialogue avec les moulures d'origine. Le mobilier, en partie sur-mesure, a été dessiné pour s'intégrer parfaitement aux proportions des pièces.
+          <p class="reveal" style="transition-delay:0.08s;">
+            La cuisine, anciennement cloisonnée et séparée du séjour, a été ouverte grâce à l'installation d'une verrière d'atelier sur mesure. Cette intervention permet de conserver une distinction visuelle entre les deux espaces tout en préservant la fluidité lumineuse de l'ensemble. Le parquet point de Hongrie en chêne massif a été refait sur la totalité de l'appartement.
           </p>
-          <p class="reveal" style="transition-delay:0.15s;">
-            La cuisine, anciennement cloisonnée, a été ouverte sur le salon pour créer un espace de vie fluide et généreux. Une verrière d'atelier sépare visuellement les deux espaces tout en préservant la lumière.
+          <p class="reveal" style="transition-delay:0.11s;">
+            La palette de matériaux — marbre de Carrare, boiseries peintes en blanc cassé, laiton brossé — crée une harmonie intemporelle qui dialogue avec les moulures d'origine. Chaque détail de menuiserie a été conçu sur mesure pour respecter les proportions des pièces et amplifier leur caractère.
+          </p>
+          <p class="reveal" style="transition-delay:0.14s;">
+            Le mobilier, partiellement dessiné par l'agence, a été sélectionné pour son équilibre entre pièces de caractère et sobriété fonctionnelle. L'éclairage, entièrement repensé, met en valeur les volumes en travaillant les contrastes entre lumière directe et ambiante.
           </p>
         </div>
 
-        <div class="reveal" style="transition-delay:0.1s;">
-          <div style="border-top:1px solid var(--border); padding-top:var(--space-sm); margin-bottom:var(--space-sm);">
-            <p style="font-size:var(--fs-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem;">Détails du projet</p>
-            <ul style="display:flex; flex-direction:column; gap:0.5rem;">
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Rénovation complète toutes surfaces</li>
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Ouverture de la cuisine sur salon</li>
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Verrière atelier sur mesure</li>
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Mobilier dessiné par l'agence</li>
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Parquet point de Hongrie chêne</li>
-              <li style="font-size:var(--fs-small); color:var(--mid);">— Salle de bain en marbre de Carrare</li>
-            </ul>
-          </div>
+        <div class="projet-details reveal" style="transition-delay:0.1s;">
+          <p class="projet-details-label">Interventions</p>
+          <ul>
+            <li>Rénovation complète toutes surfaces</li>
+            <li>Ouverture de la cuisine sur le salon</li>
+            <li>Verrière atelier sur mesure</li>
+            <li>Parquet point de Hongrie chêne massif</li>
+            <li>Salle de bain en marbre de Carrare</li>
+            <li>Menuiseries et boiseries sur mesure</li>
+            <li>Mobilier dessiné par l'agence</li>
+            <li>Refonte de l'électricité et de la plomberie</li>
+            <li>Éclairage architectural et d'ambiance</li>
+          </ul>
+          <p class="projet-details-label">Matériaux principaux</p>
+          <ul>
+            <li>Marbre de Carrare — salle de bain et cuisine</li>
+            <li>Chêne massif — parquet point de Hongrie</li>
+            <li>Laiton brossé — robinetterie et quincaillerie</li>
+            <li>Lin et velours — textiles sur mesure</li>
+          </ul>
           <a href="../contact.html" class="link-underline">Nous confier un projet similaire</a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="projet-gallery">
-        <div class="reveal-scale" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
-        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#BBB5B0,#9C9893); aspect-ratio:4/3;"></div>
-        <div class="reveal-scale" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0); aspect-ratio:4/3;"></div>
-        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#CCC7C1,#AFA9A4); aspect-ratio:4/3;"></div>
-      </div>
-      <div class="reveal-scale" style="background:linear-gradient(160deg,#B8B3AE,#9D9994); aspect-ratio:21/9; margin-bottom:1rem;"></div>
-      <div class="projet-gallery">
-        <div class="reveal-scale" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA); aspect-ratio:4/3;"></div>
-        <div class="reveal-scale" style="transition-delay:0.08s; background:linear-gradient(160deg,#C9C3BC,#A8A49F); aspect-ratio:4/3;"></div>
-      </div>
-    </div>
-  </section>
-
+  <!-- NAV PROJET PRÉCÉDENT / SUIVANT -->
   <div class="container">
     <div class="projet-nav-bottom">
       <a href="projet-batignolles.html" class="projet-nav-link reveal">
@@ -146,10 +374,11 @@
 
   <div class="container">
     <div class="projet-seo">
-      <p>Agence MIND, cabinet d'architecture intérieure basé à Paris, a réalisé la rénovation complète de cet appartement haussmannien dans le 10e arrondissement. Ce projet illustre notre approche de la rénovation résidentielle haut de gamme à Paris : respect du patrimoine architectural, optimisation des espaces de vie et sélection rigoureuse des matériaux. Spécialisée dans la rénovation d'appartements parisiens, de studios aux grands appartements familiaux, l'Agence MIND intervient sur l'ensemble du territoire français et à l'international.</p>
+      <p>Agence MIND, cabinet d'architecture intérieure basé à Paris, a réalisé la rénovation complète de cet appartement haussmannien dans le 10e arrondissement. Ce projet illustre notre approche de la rénovation résidentielle haut de gamme : respect du patrimoine architectural, optimisation des espaces de vie et sélection rigoureuse des matériaux. Spécialisée dans la rénovation d'appartements parisiens, l'Agence MIND intervient sur l'ensemble du territoire français et à l'international.</p>
     </div>
   </div>
 
+  <!-- LISTE DES PROJETS -->
   <div class="projects-list-section">
     <div class="container">
       <div class="projects-list">
@@ -197,8 +426,10 @@
       document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
     }
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
   </script>
 
