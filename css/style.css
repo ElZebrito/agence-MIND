@@ -1172,69 +1172,107 @@ footer {
   padding: calc(var(--nav-height) + var(--space-lg)) 0 var(--space-md);
 }
 
-.press-logos {
+/* ── Bande publications éditoriale ── */
+.press-publications-band {
+  padding: var(--space-md) 0 var(--space-lg);
+}
+
+.pub-band {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: var(--border);
-  margin-bottom: var(--space-lg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-.press-logo-item {
-  background: var(--bg);
-  padding: var(--space-md);
+.pub-band-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.8rem);
+  border-right: 1px solid var(--border);
+  gap: 1.2rem;
+}
+
+.pub-band-name {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 0.9rem;
-  color: var(--muted);
-  text-align: center;
-  transition: background 0.4s var(--ease-out), color 0.3s;
-}
-
-.press-logo-item:hover {
-  background: rgba(255,255,255,0.6);
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  line-height: 1.2;
   color: var(--ink);
 }
 
-.press-articles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: var(--space-lg);
-}
-
-.press-article-card {
-  border-top: 1px solid var(--border);
-  padding-top: var(--space-sm);
-}
-
-.press-article-card .img-placeholder {
-  aspect-ratio: 4/3;
-  background: #D0CBC5;
-  margin-bottom: var(--space-sm);
-  overflow: hidden;
-}
-
-.press-article-card .pub {
+.pub-band-count {
   font-size: var(--fs-xs);
-  color: var(--muted);
   letter-spacing: 0.1em;
+  color: var(--muted);
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
 }
 
-.press-article-card h3 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
+/* ── Grille couvertures ── */
+.press-covers-section {
+  padding: var(--space-md) 0 var(--space-lg);
 }
 
-.press-article-card .date {
+.press-covers-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+  align-items: start;
+}
+
+.press-cover {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  grid-column: span 3;
+}
+
+.press-cover--feature {
+  grid-column: span 4;
+}
+
+.cover-wrap {
+  overflow: hidden;
+  background: #C8C4BE;
+}
+
+.cover-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.press-cover:hover .cover-wrap img { transform: scale(1.04); }
+
+.cover-ph {
+  aspect-ratio: 2/3;
+  width: 100%;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.press-cover:hover .cover-ph { transform: scale(1.04); }
+
+.cover-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.cover-pub {
   font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cover-year {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
   color: var(--muted);
 }
 
@@ -1565,8 +1603,10 @@ footer {
   .awards-grid { grid-template-columns: 1fr 1fr; }
   .values-grid { grid-template-columns: 1fr; gap: 2rem; }
   .asc-section { grid-template-columns: 1fr; }
-  .press-logos { grid-template-columns: repeat(3, 1fr); }
-  .press-articles { grid-template-columns: 1fr; }
+  .pub-band { grid-template-columns: 1fr 1fr 1fr; }
+  .pub-band-item:nth-child(4), .pub-band-item:nth-child(5) { border-top: 1px solid var(--border); }
+  .press-cover { grid-column: span 6; }
+  .press-cover--feature { grid-column: span 6; }
   .agence-hero { grid-template-columns: 1fr; }
   .projet-header { grid-template-columns: 1fr; }
   .projet-content { grid-template-columns: 1fr; }
@@ -1594,7 +1634,10 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .press-logos { grid-template-columns: 1fr 1fr; }
+  .pub-band { grid-template-columns: 1fr 1fr; }
+  .pub-band-item:nth-child(3), .pub-band-item:nth-child(4), .pub-band-item:nth-child(5) { border-top: 1px solid var(--border); }
+  .press-cover { grid-column: span 12; }
+  .press-cover--feature { grid-column: span 12; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }

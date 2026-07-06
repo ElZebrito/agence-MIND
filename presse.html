@@ -38,63 +38,106 @@
     </div>
   </section>
 
-  <section>
+  <!-- PUBLICATIONS (bande typographique éditoriale) -->
+  <section class="press-publications-band">
     <div class="container">
-      <div class="press-logos">
-        <div class="press-logo-item reveal">Marie Claire<br>Maison</div>
-        <div class="press-logo-item reveal" style="transition-delay:0.05s;">Côté<br>Ouest</div>
-        <div class="press-logo-item reveal" style="transition-delay:0.1s;">Living Etc<br><span style="font-size:var(--fs-xs);">United Kingdom</span></div>
-        <div class="press-logo-item reveal" style="transition-delay:0.15s;">A Vivre<br>Architectures</div>
-        <div class="press-logo-item reveal" style="transition-delay:0.2s;">Homify<br><span style="font-size:var(--fs-xs);">International</span></div>
+      <div class="pub-band reveal">
+        <div class="pub-band-item">
+          <span class="pub-band-name">Marie Claire<br>Maison</span>
+          <span class="pub-band-count">× 2</span>
+        </div>
+        <div class="pub-band-item">
+          <span class="pub-band-name">Côté<br>Ouest</span>
+          <span class="pub-band-count">× 1</span>
+        </div>
+        <div class="pub-band-item">
+          <span class="pub-band-name">Living Etc<br><em style="font-size:0.65em;font-style:normal;letter-spacing:0.06em;">United Kingdom</em></span>
+          <span class="pub-band-count">× 1</span>
+        </div>
+        <div class="pub-band-item">
+          <span class="pub-band-name">A Vivre<br>Architectures</span>
+          <span class="pub-band-count">× 1</span>
+        </div>
+        <div class="pub-band-item" style="border-right:none;">
+          <span class="pub-band-name">Homify<br><em style="font-size:0.65em;font-style:normal;letter-spacing:0.06em;">International</em></span>
+          <span class="pub-band-count">× 1</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section style="padding:var(--space-lg) 0;">
+  <!-- COUVERTURES DE MAGAZINES -->
+  <section class="press-covers-section">
     <div class="container">
-      <p class="section-label reveal-line" style="margin-bottom:var(--space-sm);">Sélection d'articles</p>
-      <div class="press-articles">
+      <p class="section-label reveal-line" style="margin-bottom:var(--space-md);">Parutions</p>
 
-        <div class="press-article-card reveal">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#D4CEC7,#B8B2AA);"></div>
-          <div class="pub">Marie Claire Maison</div>
-          <h3>Un appartement parisien réinventé avec élégance</h3>
-          <div class="date">2019</div>
+      <div class="press-covers-grid">
+
+        <!-- Couverture vedette (grande) -->
+        <div class="press-cover press-cover--feature reveal">
+          <div class="cover-wrap">
+            <!-- Remplacer par : <img src="images/presse/marie-claire-maison-2019.png" alt="…"> -->
+            <div class="cover-ph" style="background:linear-gradient(170deg,#D4CEC7,#B8B2AA);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">Marie Claire Maison</span>
+            <span class="cover-year">2019</span>
+          </div>
         </div>
 
-        <div class="press-article-card reveal" style="transition-delay:0.08s;">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#C9C3BC,#A8A49F);"></div>
-          <div class="pub">Marie Claire Maison</div>
-          <h3>La rénovation d'un hôtel particulier en lumière</h3>
-          <div class="date">2017</div>
+        <!-- Couverture normale -->
+        <div class="press-cover reveal" style="transition-delay:0.06s;">
+          <div class="cover-wrap">
+            <div class="cover-ph" style="background:linear-gradient(170deg,#C9C3BC,#A8A49F);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">Marie Claire Maison</span>
+            <span class="cover-year">2017</span>
+          </div>
         </div>
 
-        <div class="press-article-card reveal" style="transition-delay:0.16s;">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#BBB5B0,#9C9893);"></div>
-          <div class="pub">Living Etc — United Kingdom</div>
-          <h3>French interiors at their most refined</h3>
-          <div class="date">2020</div>
+        <!-- Couverture normale -->
+        <div class="press-cover reveal" style="transition-delay:0.12s;">
+          <div class="cover-wrap">
+            <div class="cover-ph" style="background:linear-gradient(170deg,#BBB5B0,#9C9893);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">Living Etc — UK</span>
+            <span class="cover-year">2020</span>
+          </div>
         </div>
 
-        <div class="press-article-card reveal">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#D6D1CC,#BBB5B0);"></div>
-          <div class="pub">Côté Ouest</div>
-          <h3>Douceur et sophistication dans un appartement bordelais</h3>
-          <div class="date">2018</div>
+        <!-- Couverture normale -->
+        <div class="press-cover reveal" style="transition-delay:0.06s;">
+          <div class="cover-wrap">
+            <div class="cover-ph" style="background:linear-gradient(170deg,#D6D1CC,#BBB5B0);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">Côté Ouest</span>
+            <span class="cover-year">2018</span>
+          </div>
         </div>
 
-        <div class="press-article-card reveal" style="transition-delay:0.08s;">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#CCC7C1,#AFA9A4);"></div>
-          <div class="pub">A Vivre Architectures</div>
-          <h3>Journées à Vivre — Lauréate 2019</h3>
-          <div class="date">2019</div>
+        <!-- Couverture normale -->
+        <div class="press-cover reveal" style="transition-delay:0.12s;">
+          <div class="cover-wrap">
+            <div class="cover-ph" style="background:linear-gradient(170deg,#CCC7C1,#AFA9A4);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">A Vivre Architectures</span>
+            <span class="cover-year">2019</span>
+          </div>
         </div>
 
-        <div class="press-article-card reveal" style="transition-delay:0.16s;">
-          <div class="img-placeholder" style="background:linear-gradient(160deg,#B8B3AE,#9D9994);"></div>
-          <div class="pub">Homify International</div>
-          <h3>Agence MIND à l'honneur — Égypte, Canada, Portugal</h3>
-          <div class="date">2021</div>
+        <!-- Couverture normale -->
+        <div class="press-cover reveal" style="transition-delay:0.18s;">
+          <div class="cover-wrap">
+            <div class="cover-ph" style="background:linear-gradient(170deg,#B8B3AE,#9D9994);"></div>
+          </div>
+          <div class="cover-meta">
+            <span class="cover-pub">Homify International</span>
+            <span class="cover-year">2021</span>
+          </div>
         </div>
 
       </div>
