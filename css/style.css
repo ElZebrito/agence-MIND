@@ -1276,6 +1276,51 @@ footer {
   color: var(--muted);
 }
 
+/* ── Homify digital section ── */
+.press-homify-section {
+  padding: var(--space-md) 0 var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.homify-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+.homify-item {
+  background: var(--bg);
+  padding: clamp(1.2rem, 2vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: background 0.3s var(--ease-out);
+}
+
+.homify-item:hover { background: rgba(255,255,255,0.5); }
+
+.homify-country {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.homify-title {
+  font-size: var(--fs-small);
+  color: var(--ink);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.homify-date {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 /* ---- PROJET DETAIL ---- */
 .projet-header {
   padding-top: calc(var(--nav-height) + var(--space-md));
