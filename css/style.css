@@ -1307,30 +1307,57 @@ footer {
 
 .parution {
   border-top: 1px solid var(--border);
-  padding: clamp(2rem, 4vw, 3.5rem) 0;
 }
 
-.parution-header {
+.parution-inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  min-height: clamp(340px, 50vw, 560px);
+}
+
+.parution--reverse .parution-inner {
+  grid-template-columns: 3fr 2fr;
+}
+
+.parution--reverse .parution-info {
+  order: 2;
+}
+
+.parution--reverse .parution-track-wrap {
+  order: 1;
+}
+
+.parution-info {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vw, 5rem) clamp(2rem, 4vw, 4rem);
+  border-right: 1px solid var(--border);
   gap: 1rem;
 }
 
-.parution-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+.parution--reverse .parution-info {
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+.parution-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--border);
+  line-height: 1;
 }
 
 .parution-pub {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
   color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
 }
 
 .parution-issue {
@@ -1344,7 +1371,8 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .parution-btn {
@@ -1358,6 +1386,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
 }
 
 .parution-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
@@ -1366,16 +1395,16 @@ footer {
   font-size: var(--fs-xs);
   letter-spacing: 0.08em;
   color: var(--muted);
-  min-width: 2.5rem;
-  text-align: center;
 }
 
 .parution-track-wrap {
   overflow: hidden;
+  position: relative;
 }
 
 .parution-track {
   display: flex;
+  height: 100%;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
@@ -1383,26 +1412,19 @@ footer {
 .parution-img {
   min-width: 100%;
   flex-shrink: 0;
+  height: 100%;
 }
 
 .parution-img img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
-.parution-ph--cover {
+.parution-ph {
   width: 100%;
-  aspect-ratio: 2/3;
-  max-height: 75vh;
-  object-fit: cover;
-}
-
-.parution-ph--spread {
-  width: 100%;
-  aspect-ratio: 16/9;
-  max-height: 75vh;
+  height: 100%;
 }
 
 /* ── Homify digital section ── */
