@@ -1342,28 +1342,46 @@ footer {
 }
 
 .parution-num {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 300;
-  color: var(--border);
-  line-height: 1;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 400;
 }
 
 .parution-pub {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
   color: var(--ink);
-  line-height: 1.15;
-  margin: 0;
+  line-height: 1.05;
+  margin: 0.4rem 0 0;
 }
 
 .parution-issue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(0.5rem, 1vw, 1rem);
+  border-top: 1px solid var(--border);
+}
+
+.parution-issue-num {
   font-size: var(--fs-xs);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.parution-issue-date {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: var(--muted);
 }
 
