@@ -1013,6 +1013,26 @@ footer {
   line-height: 1.8;
 }
 
+/* Ticker section header */
+.ticker-section {
+  padding: var(--space-lg) 0 var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.ticker-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.ticker-intro {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
 /* Logo ticker */
 .logo-ticker {
   padding: var(--space-md) 0;
