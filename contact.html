@@ -183,6 +183,35 @@
       color: var(--bg);
     }
 
+    .profil-autre-field {
+      margin-top: 0.8rem;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.25s ease;
+    }
+
+    .profil-autre-field.visible {
+      max-height: 80px;
+      opacity: 1;
+    }
+
+    .profil-autre-field input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    .profil-autre-field input:focus { border-color: var(--ink); }
+    .profil-autre-field input::placeholder { color: var(--muted); opacity: 0.6; }
+
     /* Form fields */
     .form-divider {
       height: 1px;
@@ -389,6 +418,10 @@
             <input type="radio" name="profil" id="profil-autre" value="autre" class="profil-chip">
             <label for="profil-autre">Autre</label>
           </div>
+
+          <div class="profil-autre-field" id="profil-autre-field">
+            <input type="text" id="profil-autre-detail" name="profil-autre-detail" placeholder="Précisez votre profil...">
+          </div>
         </div>
 
         <div class="form-divider"></div>
@@ -533,6 +566,18 @@
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal, .reveal-line, .reveal-scale').forEach(el => observer.observe(el));
+
+    // Champ "Autre" conditionnel
+    document.querySelectorAll('.profil-chip').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const field = document.getElementById('profil-autre-field');
+        const input = document.getElementById('profil-autre-detail');
+        const isAutre = document.getElementById('profil-autre').checked;
+        field.classList.toggle('visible', isAutre);
+        if (isAutre) setTimeout(() => input.focus(), 50);
+        else input.value = '';
+      });
+    });
   </script>
 
 </body>
