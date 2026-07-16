@@ -4,8 +4,285 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Agence MIND</title>
-  <meta name="description" content="Contactez l'Agence MIND pour votre projet d'architecture intérieure à Paris, en France ou à l'international. Siège : 70 Rue d'Hauteville, Paris 10e.">
+  <meta name="description" content="Contactez l'Agence MIND pour votre projet d'architecture intérieure à Paris, en France ou à l'international.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Contact page ── */
+    .contact-hero {
+      padding: calc(var(--nav-height) + clamp(3rem,6vw,5rem)) 0 clamp(2rem,4vw,3rem);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-hero-inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-hero h1 {
+      font-size: var(--fs-hero);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1;
+      margin: 0.5rem 0 0;
+    }
+
+    .contact-hero-sub {
+      font-size: var(--fs-body);
+      color: var(--muted);
+      max-width: 340px;
+      line-height: 1.8;
+      text-align: right;
+    }
+
+    /* ── Main layout ── */
+    .contact-body {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      min-height: 80vh;
+    }
+
+    /* ── Left column ── */
+    .contact-aside {
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-aside-info {
+      padding: clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.5rem,3vw,2.5rem);
+      flex: 1;
+    }
+
+    .contact-block h4 {
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-block p,
+    .contact-block a {
+      font-size: var(--fs-small);
+      color: var(--ink);
+      line-height: 1.8;
+      display: block;
+      text-decoration: none;
+    }
+
+    .contact-block a {
+      transition: color 0.2s;
+    }
+
+    .contact-block a:hover { color: var(--muted); }
+
+    .contact-networks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    /* Map */
+    .contact-map {
+      flex-shrink: 0;
+      border-top: 1px solid var(--border);
+      height: clamp(220px, 30vw, 340px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      filter: grayscale(1) contrast(0.9);
+      transition: filter 0.4s;
+    }
+
+    .contact-map:hover iframe { filter: grayscale(0.4) contrast(1); }
+
+    .contact-map-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: var(--bg);
+      padding: 0.4rem 0.8rem;
+      font-size: var(--fs-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    /* ── Right column: form ── */
+    .contact-form-wrap {
+      padding: clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,3rem);
+    }
+
+    .contact-form-wrap .section-label {
+      margin-bottom: clamp(1.5rem,3vw,2.5rem);
+    }
+
+    /* Profil chips */
+    .profil-group {
+      margin-bottom: clamp(1.5rem,3vw,2rem);
+    }
+
+    .profil-label {
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.9rem;
+    }
+
+    .profil-chips {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .profil-chip {
+      display: none;
+    }
+
+    .profil-chip + label {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid var(--border);
+      font-size: var(--fs-small);
+      font-family: var(--font-body);
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      user-select: none;
+    }
+
+    .profil-chip + label:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .profil-chip:checked + label {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    /* Form fields */
+    .form-divider {
+      height: 1px;
+      background: var(--border);
+      margin: clamp(1.2rem,2.5vw,2rem) 0;
+    }
+
+    .contact-form-wrap .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: clamp(1rem,2vw,1.4rem);
+    }
+
+    .contact-form-wrap label {
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-form-wrap input,
+    .contact-form-wrap select,
+    .contact-form-wrap textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+
+    .contact-form-wrap select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%239A9A9A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .contact-form-wrap input:focus,
+    .contact-form-wrap select:focus,
+    .contact-form-wrap textarea:focus {
+      border-color: var(--ink);
+    }
+
+    .contact-form-wrap input::placeholder,
+    .contact-form-wrap textarea::placeholder {
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    .contact-form-wrap textarea {
+      resize: none;
+      height: 110px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-submit {
+      margin-top: clamp(1.2rem,2.5vw,2rem);
+      width: 100%;
+      padding: 1.1rem 2rem;
+      background: var(--ink);
+      color: var(--bg);
+      border: none;
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-submit:hover { opacity: 0.8; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .contact-hero-sub { display: none; }
+      .contact-body { grid-template-columns: 1fr; }
+      .contact-aside { border-right: none; border-bottom: 1px solid var(--border); }
+      .contact-map { height: 220px; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .profil-chips { gap: 0.4rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,92 +306,145 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <section>
+  <!-- HERO -->
+  <section class="contact-hero">
     <div class="container">
-      <div class="contact-grid">
-
-        <div class="contact-info">
+      <div class="contact-hero-inner">
+        <div>
           <p class="section-label reveal-line">Parlons de votre projet</p>
           <h1 class="reveal">Nous<br>contacter</h1>
+        </div>
+        <p class="contact-hero-sub reveal" style="transition-delay:0.1s;">
+          Chaque projet commence par une conversation.<br>Décrivez-nous votre espace, votre envie,<br>et nous vous répondons sous 48 h.
+        </p>
+      </div>
+    </div>
+  </section>
 
-          <div class="contact-block reveal" style="transition-delay:0.1s;">
-            <h4>Siège social</h4>
-            <p>70 Rue d'Hauteville<br>75010 Paris</p>
-          </div>
+  <!-- MAIN GRID -->
+  <div class="contact-body">
 
-          <div class="contact-block reveal" style="transition-delay:0.15s;">
-            <h4>Bureau & Showroom</h4>
-            <p>Archi Social Club<br>Rue Ernest Psychari<br>75007 Paris</p>
-          </div>
+    <!-- Aside : infos + map -->
+    <aside class="contact-aside">
+      <div class="contact-aside-info">
 
-          <div class="contact-block reveal" style="transition-delay:0.2s;">
-            <h4>Email</h4>
-            <a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a>
-          </div>
+        <div class="contact-block reveal">
+          <h4>Siège social</h4>
+          <p>70 Rue d'Hauteville<br>75010 Paris</p>
+        </div>
 
-          <div class="contact-block reveal" style="transition-delay:0.25s;">
-            <h4>Réseaux</h4>
-            <p>
-              <a href="https://instagram.com" target="_blank" rel="noopener" style="display:block; margin-bottom:0.3rem;">Instagram</a>
-              <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
-            </p>
+        <div class="contact-block reveal" style="transition-delay:0.05s;">
+          <h4>Bureau & Showroom</h4>
+          <p>Archi Social Club<br>9-11 Rue Ernest Psychari<br>75007 Paris</p>
+        </div>
+
+        <div class="contact-block reveal" style="transition-delay:0.1s;">
+          <h4>Email</h4>
+          <a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a>
+        </div>
+
+        <div class="contact-block reveal" style="transition-delay:0.15s;">
+          <h4>Réseaux</h4>
+          <div class="contact-networks">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
           </div>
         </div>
 
-        <div class="contact-form reveal" style="transition-delay:0.1s;">
-          <p class="section-label" style="margin-bottom:var(--space-sm);">Formulaire de contact</p>
+      </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
-            </div>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" placeholder="Votre nom">
-            </div>
+      <!-- Google Maps -->
+      <div class="contact-map reveal">
+        <iframe
+          src="https://maps.google.com/maps?q=9+rue+Ernest+Psychari,+75007+Paris&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          title="Agence MIND — 9-11 Rue Ernest Psychari, Paris 7e"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+        <span class="contact-map-label">Paris 7e</span>
+      </div>
+    </aside>
+
+    <!-- Form -->
+    <div class="contact-form-wrap">
+      <p class="section-label reveal-line">Formulaire de contact</p>
+
+      <form>
+
+        <!-- Profil -->
+        <div class="profil-group reveal">
+          <span class="profil-label">Vous êtes ?</span>
+          <div class="profil-chips">
+            <input type="radio" name="profil" id="profil-client" value="client" class="profil-chip" checked>
+            <label for="profil-client">Client</label>
+
+            <input type="radio" name="profil" id="profil-fournisseur" value="fournisseur" class="profil-chip">
+            <label for="profil-fournisseur">Fournisseur</label>
+
+            <input type="radio" name="profil" id="profil-recrutement" value="recrutement" class="profil-chip">
+            <label for="profil-recrutement">Recrutement</label>
+
+            <input type="radio" name="profil" id="profil-autre" value="autre" class="profil-chip">
+            <label for="profil-autre">Autre</label>
           </div>
+        </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="votre@email.com">
-            </div>
-            <div class="form-group">
-              <label for="tel">Téléphone</label>
-              <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00">
-            </div>
-          </div>
+        <div class="form-divider"></div>
 
+        <div class="form-row reveal" style="transition-delay:0.05s;">
           <div class="form-group">
-            <label for="type-projet">Type de projet</label>
-            <select id="type-projet" name="type-projet">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom">
+          </div>
+        </div>
+
+        <div class="form-row reveal" style="transition-delay:0.08s;">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com">
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00">
+          </div>
+        </div>
+
+        <div class="form-group reveal" style="transition-delay:0.1s;">
+          <label for="type-projet">Type de projet</label>
+          <select id="type-projet" name="type-projet">
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="residence-principale">Résidence principale</option>
+            <option value="residence-secondaire">Résidence secondaire</option>
+            <option value="locatif">Investissement locatif</option>
+            <option value="bureaux">Bureaux & Hospitality</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-row reveal" style="transition-delay:0.12s;">
+          <div class="form-group">
+            <label for="surface">Surface approximative</label>
+            <select id="surface" name="surface">
               <option value="" disabled selected>Sélectionnez</option>
-              <option value="residence-principale">Résidence principale</option>
-              <option value="residence-secondaire">Résidence secondaire</option>
-              <option value="locatif">Investissement locatif</option>
-              <option value="bureaux">Bureaux & Hospitality</option>
-              <option value="autre">Autre</option>
+              <option value="moins-50">Moins de 50 m²</option>
+              <option value="50-100">50 – 100 m²</option>
+              <option value="100-200">100 – 200 m²</option>
+              <option value="200-plus">Plus de 200 m²</option>
             </select>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="surface">Surface approximative</label>
-              <select id="surface" name="surface">
-                <option value="" disabled selected>Sélectionnez</option>
-                <option value="moins-50">Moins de 50 m²</option>
-                <option value="50-100">50 – 100 m²</option>
-                <option value="100-200">100 – 200 m²</option>
-                <option value="200-plus">Plus de 200 m²</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="localisation">Localisation du projet</label>
-              <input type="text" id="localisation" name="localisation" placeholder="Ville, pays">
-            </div>
+          <div class="form-group">
+            <label for="localisation">Localisation du projet</label>
+            <input type="text" id="localisation" name="localisation" placeholder="Ville, pays">
           </div>
+        </div>
 
+        <div class="form-row reveal" style="transition-delay:0.14s;">
           <div class="form-group">
             <label for="delai">Délai envisagé</label>
             <select id="delai" name="delai">
@@ -126,31 +456,32 @@
               <option value="pas-encore-defini">Pas encore défini</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="comment">Comment avez-vous connu l'agence ?</label>
             <select id="comment" name="comment">
               <option value="" disabled selected>Sélectionnez</option>
               <option value="bouche-a-oreille">Bouche à oreille</option>
               <option value="instagram">Instagram</option>
+              <option value="linkedin">LinkedIn</option>
               <option value="houzz">Houzz</option>
               <option value="presse">Presse / Magazine</option>
               <option value="google">Recherche Google</option>
               <option value="autre">Autre</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <label for="message">Votre projet en quelques mots</label>
-            <textarea id="message" name="message" placeholder="Décrivez brièvement votre projet..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit">Envoyer le message</button>
         </div>
 
-      </div>
+        <div class="form-group reveal" style="transition-delay:0.16s;">
+          <label for="message">Votre projet en quelques mots</label>
+          <textarea id="message" name="message" placeholder="Décrivez brièvement votre projet..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit reveal" style="transition-delay:0.18s;">Envoyer le message</button>
+
+      </form>
     </div>
-  </section>
+
+  </div>
 
   <div class="projects-list-section">
     <div class="container">
@@ -181,9 +512,9 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><h2>MIND</h2><p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p><div class="footer-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a></div></div>
+        <div class="footer-brand"><h2>MIND</h2><p>Architecture · Design · Décoration<br><br>Cabinet d'architecture intérieure fondé par Marine Prigent en 2009.<br>Paris · Europe · International</p><div class="footer-social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a></div></div>
         <div class="footer-col"><h4>Navigation</h4><ul><li><a href="realisations.html">Réalisations</a></li><li><a href="presse.html">Presse</a></li><li><a href="agence.html">L'Agence</a></li><li><a href="services.html">Prestations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
+        <div class="footer-col"><h4>Adresses</h4><ul><li><a>70 Rue d'Hauteville<br>75010 Paris</a></li><li style="margin-top:0.8rem;"><a>9-11 Rue Ernest Psychari<br>75007 Paris</a></li></ul></div>
         <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Prendre contact</a></li><li><a href="mailto:contact@agence-mind.com">contact@agence-mind.com</a></li></ul></div>
       </div>
       <div class="footer-bottom"><span>© 2025 Agence MIND. Tous droits réservés.</span><span>Mentions légales</span></div>
